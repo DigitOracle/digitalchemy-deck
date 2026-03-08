@@ -1377,6 +1377,177 @@
     font-family: 'Cormorant Garamond', serif; font-size: 13px;
     color: rgba(201,168,76,0.4); letter-spacing: 0.1em;
   }
+
+  /* ════════════════════════════════════════════════════
+     SLIDE 6 — MODULE 1 DEEP DIVE
+  ════════════════════════════════════════════════════ */
+  #s6 { background: #05030f; }
+
+  .s6-header {
+    position: absolute; top: 0; left: 0; right: 0; height: 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+    background: rgba(25,10,70,0.4); backdrop-filter: blur(4px);
+    z-index: 10;
+  }
+  .s6-header-left { display: flex; align-items: center; gap: 16px; }
+  .s6-module-badge {
+    font-family: 'Rajdhani', sans-serif; font-size: 9px;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: rgba(5,3,15,0.9); background: var(--gold);
+    padding: 3px 10px; border-radius: 2px; font-weight: 600;
+  }
+  .s6-header-title {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(245,242,236,0.55);
+  }
+  .s6-header-logo {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 14px; color: rgba(245,242,236,0.28); letter-spacing: 0.05em;
+  }
+  .s6-header-logo span { color: rgba(201,168,76,0.45); }
+
+  /* Left panel — title + description */
+  .s6-left {
+    position: absolute;
+    top: 72px; left: 80px; bottom: 68px;
+    width: 340px;
+    display: flex; flex-direction: column; justify-content: center;
+    gap: 0;
+    opacity: 0; animation: fadeUp 0.7s ease forwards 0.25s;
+    z-index: 10;
+  }
+  .s6-module-label {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px;
+    letter-spacing: 0.38em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px; font-weight: 600;
+  }
+  .s6-title {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 40px; line-height: 1.05; color: var(--white);
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 24px rgba(5,3,15,0.9);
+    margin-bottom: 16px;
+  }
+  .s6-layer-tag {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(201,168,76,0.7); margin-bottom: 20px; font-weight: 500;
+  }
+  .s6-desc {
+    font-family: 'Rajdhani', sans-serif; font-weight: 300;
+    font-size: 14px; line-height: 1.65;
+    color: rgba(245,242,236,0.65); letter-spacing: 0.02em;
+    margin-bottom: 28px;
+  }
+  .s6-rule {
+    width: 48px; height: 2px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    margin-bottom: 28px;
+  }
+  .s6-standards {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .s6-standard-item {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .s6-standard-dot {
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--gold); opacity: 0.55; flex-shrink: 0;
+  }
+  .s6-standard-text {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px;
+    letter-spacing: 0.12em; color: rgba(245,242,236,0.4);
+    font-weight: 400;
+  }
+
+  /* Right panel — metric cards */
+  .s6-right {
+    position: absolute;
+    top: 72px; left: 460px; right: 60px; bottom: 68px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    z-index: 10;
+  }
+
+  .s6-card {
+    background: rgba(25,10,70,0.5);
+    border: 1px solid rgba(245,242,236,0.07);
+    border-top: 2px solid rgba(201,168,76,0.4);
+    border-radius: 3px;
+    padding: 22px 22px 18px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    opacity: 0;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .s6-card:hover {
+    background: rgba(25,10,70,0.68);
+    border-top-color: var(--gold);
+  }
+  .s6-card:nth-child(1) { animation: fadeUp 0.55s ease forwards 0.45s; }
+  .s6-card:nth-child(2) { animation: fadeUp 0.55s ease forwards 0.60s; }
+  .s6-card:nth-child(3) { animation: fadeUp 0.55s ease forwards 0.75s; }
+  .s6-card:nth-child(4) { animation: fadeUp 0.55s ease forwards 0.90s; }
+
+  .s6-card-icon {
+    font-family: 'Rajdhani', sans-serif; font-size: 9px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 10px; opacity: 0.8;
+  }
+  .s6-card-title {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: 20px; color: var(--white); margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .s6-card-body {
+    font-family: 'Rajdhani', sans-serif; font-weight: 300;
+    font-size: 13px; line-height: 1.6;
+    color: rgba(245,242,236,0.62); letter-spacing: 0.02em;
+    flex: 1; margin-bottom: 14px;
+  }
+  .s6-card-bullets {
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .s6-card-bullet {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'Rajdhani', sans-serif; font-size: 12px;
+    color: rgba(245,242,236,0.55); letter-spacing: 0.04em; font-weight: 400;
+  }
+  .s6-card-bullet::before {
+    content: '';
+    width: 4px; height: 4px; border-radius: 50%;
+    background: rgba(201,168,76,0.5); flex-shrink: 0;
+  }
+
+  /* Vertical divider */
+  .s6-divider {
+    position: absolute;
+    top: 100px; bottom: 80px;
+    left: 432px; width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.2), transparent);
+    z-index: 10;
+  }
+
+  /* Footer */
+  .s6-footer {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; border-top: 1px solid rgba(245,242,236,0.05);
+    z-index: 10;
+  }
+  .s6-footer-left {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(245,242,236,0.2);
+  }
+  .s6-slide-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 13px;
+    color: rgba(201,168,76,0.4); letter-spacing: 0.1em;
+  }
 </style>
 </head>
 <body>
@@ -1876,6 +2047,121 @@
   </section>
 
 
+  <!-- ═══════════════════════════════════════════
+       SLIDE 6 — MODULE 1 DEEP DIVE
+  ════════════════════════════════════════════ -->
+  <section class="slide" id="s6">
+
+    <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      <source src="assets/bg-s6.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(5,3,15,0.96) 0%,rgba(5,3,15,0.75) 45%,rgba(5,3,15,0.88) 100%);z-index:1;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(25,10,70,0.3) 0%,transparent 60%);z-index:2;"></div>
+
+    <!-- Header -->
+    <div class="s6-header">
+      <div class="s6-header-left">
+        <span class="s6-module-badge">Module 01</span>
+        <span class="s6-header-title">Built Environment &amp; Infrastructure</span>
+      </div>
+      <span class="s6-header-logo">Digit<span>Alchemy</span>&#174;</span>
+    </div>
+
+    <!-- Vertical divider -->
+    <div class="s6-divider"></div>
+
+    <!-- Left panel -->
+    <div class="s6-left">
+      <div class="s6-module-label">Deep Dive</div>
+      <div class="s6-title">The delivery spine.</div>
+      <div class="s6-layer-tag">Delivery Intelligence Layer</div>
+      <div class="s6-desc">Real-time construction intelligence across every package, every programme milestone, and every site condition — from ground-break to handover.</div>
+      <div class="s6-rule"></div>
+      <div class="s6-standards">
+        <div class="s6-standard-item">
+          <div class="s6-standard-dot"></div>
+          <span class="s6-standard-text">ISO 19650-2 — Information management, delivery phase</span>
+        </div>
+        <div class="s6-standard-item">
+          <div class="s6-standard-dot"></div>
+          <span class="s6-standard-text">BS EN 17412 — Level of information need</span>
+        </div>
+        <div class="s6-standard-item">
+          <div class="s6-standard-dot"></div>
+          <span class="s6-standard-text">CIOB Code of Practice — Programme management</span>
+        </div>
+        <div class="s6-standard-item">
+          <div class="s6-standard-dot"></div>
+          <span class="s6-standard-text">UAE Construction Permit Standards — Digital submissions</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right panel — 4 cards -->
+    <div class="s6-right">
+
+      <div class="s6-card">
+        <div>
+          <div class="s6-card-icon">&#9632; Capability 01</div>
+          <div class="s6-card-title">Schedule Intelligence</div>
+          <div class="s6-card-body">Live programme tracking against baseline. Critical path visibility with automated float analysis and milestone forecasting.</div>
+        </div>
+        <div class="s6-card-bullets">
+          <div class="s6-card-bullet">Critical path monitoring</div>
+          <div class="s6-card-bullet">Float erosion alerts</div>
+          <div class="s6-card-bullet">Milestone forecast vs baseline</div>
+        </div>
+      </div>
+
+      <div class="s6-card">
+        <div>
+          <div class="s6-card-icon">&#9632; Capability 02</div>
+          <div class="s6-card-title">Package & Procurement Tracking</div>
+          <div class="s6-card-body">Full visibility of every contract package — award status, lead times, approval gates, and on-site delivery against programme.</div>
+        </div>
+        <div class="s6-card-bullets">
+          <div class="s6-card-bullet">Package award &amp; status dashboard</div>
+          <div class="s6-card-bullet">Lead time breach detection</div>
+          <div class="s6-card-bullet">Approval gate tracking</div>
+        </div>
+      </div>
+
+      <div class="s6-card">
+        <div>
+          <div class="s6-card-icon">&#9632; Capability 03</div>
+          <div class="s6-card-title">Progress Monitoring</div>
+          <div class="s6-card-body">Physical progress computed from BIM, IoT sensor feeds, and VIPER&#174; data — not self-reported. Plan-vs-actual at element level.</div>
+        </div>
+        <div class="s6-card-bullets">
+          <div class="s6-card-bullet">BIM-linked progress computation</div>
+          <div class="s6-card-bullet">VIPER&#174; sensor integration</div>
+          <div class="s6-card-bullet">Element-level plan-vs-actual</div>
+        </div>
+      </div>
+
+      <div class="s6-card">
+        <div>
+          <div class="s6-card-icon">&#9632; Capability 04</div>
+          <div class="s6-card-title">Delay Risk Signals</div>
+          <div class="s6-card-body">Predictive risk engine flags emerging delays before they become programme events — cross-referencing procurement, weather, and resource signals.</div>
+        </div>
+        <div class="s6-card-bullets">
+          <div class="s6-card-bullet">Predictive delay detection</div>
+          <div class="s6-card-bullet">Cross-signal risk correlation</div>
+          <div class="s6-card-bullet">Contractor performance scoring</div>
+        </div>
+      </div>
+
+    </div><!-- /s6-right -->
+
+    <footer class="s6-footer">
+      <span class="s6-footer-left">DigitAlchemy&#174; Tech Limited &nbsp;&#183;&nbsp; ADGM No. 35004 &nbsp;&#183;&nbsp; Abu Dhabi, UAE</span>
+      <span class="s6-slide-num">06 / 12</span>
+    </footer>
+
+  </section>
+
+
 </div>
 
 <!-- Nav -->
@@ -1891,6 +2177,7 @@
     <div class="nav-dot" data-slide="2"></div>
     <div class="nav-dot" data-slide="3"></div>
     <div class="nav-dot" data-slide="4"></div>
+    <div class="nav-dot" data-slide="5"></div>
   </div>
   <div class="nav-arrow" id="nav-next" title="Next">
     <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
