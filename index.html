@@ -44,6 +44,259 @@
   .slide.active { display: block; }
 
   /* ════════════════════════════════════════════════════
+     SLIDE 4 — WHAT IT CONNECTS
+  ════════════════════════════════════════════════════ */
+  #s4 { background: #05030f; }
+
+  /* Header bar */
+  .s4-header {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+    background: rgba(25,10,70,0.35);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+  }
+  .s4-header-eyebrow {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .s4-header-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(245,242,236,0.28);
+    letter-spacing: 0.05em;
+  }
+  .s4-header-logo span { color: rgba(201,168,76,0.45); }
+
+  /* Title block */
+  .s4-title-block {
+    position: absolute;
+    top: 72px; left: 80px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.2s;
+  }
+  .s4-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 38px;
+    line-height: 1.1;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+  .s4-subtitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,242,236,0.45);
+    margin-top: 6px;
+  }
+
+  /* ── Flow diagram ── */
+  .s4-flow {
+    position: absolute;
+    top: 148px; left: 48px; right: 48px;
+    bottom: 68px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* Columns */
+  .s4-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+  }
+  .s4-col-inputs  { width: 240px; animation: fadeUp 0.6s ease forwards 0.4s; }
+  .s4-col-engine  { flex: 1; align-items: center; animation: fadeUp 0.6s ease forwards 0.7s; }
+  .s4-col-outputs { width: 240px; animation: fadeUp 0.6s ease forwards 1.0s; }
+
+  /* Connector arrows area */
+  .s4-connectors {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards 0.55s;
+  }
+  .s4-connectors.right { animation-delay: 0.85s; }
+
+  .s4-arrow-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, rgba(201,168,76,0.15), rgba(201,168,76,0.5), rgba(201,168,76,0.15));
+    position: relative;
+  }
+  .s4-arrow-line::after {
+    content: '';
+    position: absolute;
+    right: -1px; top: -4px;
+    width: 0; height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid rgba(201,168,76,0.5);
+  }
+
+  /* Input / output cards */
+  .s4-card {
+    padding: 10px 14px;
+    border: 1px solid rgba(245,242,236,0.07);
+    background: rgba(25,10,70,0.28);
+    border-radius: 3px;
+    transition: border-color 0.3s;
+  }
+  .s4-card:hover { border-color: rgba(201,168,76,0.3); }
+  .s4-card-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 3px;
+  }
+  .s4-card-desc {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    color: rgba(245,242,236,0.5);
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  /* Output cards — slightly brighter */
+  .s4-col-outputs .s4-card {
+    border-color: rgba(201,168,76,0.12);
+    background: rgba(25,10,70,0.38);
+  }
+  .s4-col-outputs .s4-card-label {
+    color: var(--white);
+    font-weight: 500;
+  }
+  .s4-col-outputs .s4-card-desc {
+    color: rgba(245,242,236,0.55);
+  }
+
+  /* Engine centre block */
+  .s4-engine {
+    width: 100%;
+    padding: 28px 20px;
+    border: 1px solid rgba(201,168,76,0.35);
+    background: rgba(25,10,70,0.6);
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 40px rgba(201,168,76,0.08), inset 0 0 30px rgba(25,10,70,0.5);
+  }
+  .s4-engine::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, rgba(201,168,76,0.2), transparent 60%, rgba(201,168,76,0.1));
+    pointer-events: none;
+  }
+  .s4-engine-wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 28px;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+  }
+  .s4-engine-wordmark span { color: var(--gold); }
+  .s4-engine-tag {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 9.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.65);
+    margin-bottom: 20px;
+  }
+  .s4-engine-modules {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 8px;
+  }
+  .s4-engine-module {
+    padding: 7px 12px;
+    border: 1px solid rgba(201,168,76,0.15);
+    background: rgba(5,3,15,0.4);
+    border-radius: 2px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,242,236,0.55);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .s4-module-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  /* Col labels */
+  .s4-col-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(245,242,236,0.25);
+    margin-bottom: 4px;
+    text-align: center;
+  }
+  .s4-col-inputs .s4-col-label,
+  .s4-col-outputs .s4-col-label { text-align: left; }
+  .s4-col-outputs .s4-col-label { text-align: right; }
+
+  /* Footer */
+  .s4-footer {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    border-top: 1px solid rgba(245,242,236,0.05);
+  }
+  .s4-footer-left {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(245,242,236,0.2);
+  }
+  .s4-slide-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: rgba(201,168,76,0.4);
+    letter-spacing: 0.1em;
+  }
+
+  /* ════════════════════════════════════════════════════
      SLIDE 1 — TITLE
   ════════════════════════════════════════════════════ */
   #s1 { background: #05030f; }
@@ -1187,6 +1440,125 @@
   </section>
 
 
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 4 — WHAT IT CONNECTS
+  ════════════════════════════════════════════ -->
+  <section class="slide" id="s4">
+
+    <!-- Video background -->
+    <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      <source src="assets/bg-s4.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlays -->
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(5,3,15,0.92) 0%,rgba(5,3,15,0.78) 50%,rgba(5,3,15,0.88) 100%);z-index:1;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,transparent 60%,rgba(5,3,15,0.55) 100%);z-index:2;"></div>
+
+    <!-- Header -->
+    <div class="s4-header" style="z-index:10;">
+      <span class="s4-header-eyebrow">Platform Intelligence</span>
+      <span class="s4-header-logo">Digit<span>Alchemy</span>&#174;</span>
+    </div>
+
+    <!-- Title block -->
+    <div class="s4-title-block" style="z-index:10;">
+      <div class="s4-title">What it connects.</div>
+      <div class="s4-subtitle">Every data source. One intelligence layer. Unified outputs.</div>
+    </div>
+
+    <!-- Flow diagram -->
+    <div class="s4-flow" style="z-index:10;">
+
+      <!-- INPUT COLUMN -->
+      <div class="s4-col s4-col-inputs">
+        <div class="s4-col-label">Data inputs</div>
+        <div class="s4-card">
+          <div class="s4-card-label">BIM / IFC</div>
+          <div class="s4-card-desc">3D models, element data, schedule linkage</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-label">GIS &amp; Spatial</div>
+          <div class="s4-card-desc">Site boundaries, planning layers, infrastructure</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-label">Cost &amp; Procurement</div>
+          <div class="s4-card-desc">BOQs, package values, contractor data</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-label">Market Data</div>
+          <div class="s4-card-desc">Rent benchmarks, vacancy, competitor pipeline</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-label">IoT &amp; Sensors</div>
+          <div class="s4-card-desc">Site conditions, progress signals, VIPER&#174; feeds</div>
+        </div>
+      </div>
+
+      <!-- LEFT ARROWS -->
+      <div class="s4-connectors" style="margin:0 4px;">
+        <div class="s4-arrow-line"></div>
+        <div class="s4-arrow-line" style="margin-top:8px;"></div>
+        <div class="s4-arrow-line" style="margin-top:8px;"></div>
+      </div>
+
+      <!-- ENGINE COLUMN -->
+      <div class="s4-col s4-col-engine">
+        <div class="s4-engine">
+          <div class="s4-engine-wordmark">Digit<span>Alchemy</span>&#174;</div>
+          <div class="s4-engine-tag">Development Intelligence Platform</div>
+          <div class="s4-engine-modules">
+            <div class="s4-engine-module"><span class="s4-module-dot"></span>Built Environment &amp; Infrastructure</div>
+            <div class="s4-engine-module"><span class="s4-module-dot"></span>AI-Governed Model Review</div>
+            <div class="s4-engine-module"><span class="s4-module-dot"></span>Commercial &amp; Market Intelligence</div>
+            <div class="s4-engine-module"><span class="s4-module-dot"></span>Feasibility &amp; Revenue Intelligence</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT ARROWS -->
+      <div class="s4-connectors right" style="margin:0 4px;">
+        <div class="s4-arrow-line"></div>
+        <div class="s4-arrow-line" style="margin-top:8px;"></div>
+        <div class="s4-arrow-line" style="margin-top:8px;"></div>
+      </div>
+
+      <!-- OUTPUT COLUMN -->
+      <div class="s4-col s4-col-outputs">
+        <div class="s4-col-label" style="text-align:left;">Intelligence outputs</div>
+        <div class="s4-card">
+          <div class="s4-card-label">Delivery Dashboard</div>
+          <div class="s4-card-desc">Schedule status, package risk, plan-vs-actual</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-label">Compliance Reports</div>
+          <div class="s4-card-desc">762 standards, audit-ready, phase-gated</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-label">Cashflow Scenarios</div>
+          <div class="s4-card-desc">Cost-to-complete, revenue-start, sensitivities</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-label">Market Intelligence</div>
+          <div class="s4-card-desc">Leasing forecasts, demand signals, benchmarks</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-label">Executive Briefings</div>
+          <div class="s4-card-desc">C-suite summaries, decision-ready narratives</div>
+        </div>
+      </div>
+
+    </div><!-- /s4-flow -->
+
+    <!-- Footer -->
+    <footer class="s4-footer" style="z-index:10;">
+      <span class="s4-footer-left">DigitAlchemy&#174; Tech Limited &nbsp;&#183;&nbsp; ADGM No. 35004 &nbsp;&#183;&nbsp; Abu Dhabi, UAE</span>
+      <span class="s4-slide-num">04 / 12</span>
+    </footer>
+
+  </section>
+
+
 </div>
 
 <!-- Nav -->
@@ -1194,6 +1566,7 @@
   <div class="nav-dot active" data-slide="0"></div>
   <div class="nav-dot" data-slide="1"></div>
   <div class="nav-dot" data-slide="2"></div>
+  <div class="nav-dot" data-slide="3"></div>
 </div>
 <div class="key-hint">← → navigate</div>
 
