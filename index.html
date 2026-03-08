@@ -1618,6 +1618,191 @@
     font-family: 'Cormorant Garamond', serif; font-size: 13px;
     color: rgba(201,168,76,0.4); letter-spacing: 0.1em;
   }
+
+  /* ════════════════════════════════════════════════════
+     SLIDE 8 — MODULES 3 & 4 COMBINED
+  ════════════════════════════════════════════════════ */
+  #s8 { background: #05030f; }
+
+  .s8-header {
+    position: absolute; top: 0; left: 0; right: 0; height: 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+    background: rgba(25,10,70,0.4); backdrop-filter: blur(4px);
+    z-index: 10;
+  }
+  .s8-header-badges { display: flex; align-items: center; gap: 10px; }
+  .s8-module-badge {
+    font-family: 'Rajdhani', sans-serif; font-size: 9px;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: rgba(5,3,15,0.9); background: var(--gold);
+    padding: 3px 10px; border-radius: 2px; font-weight: 700;
+  }
+  .s8-badge-sep {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px;
+    color: rgba(201,168,76,0.4);
+  }
+  .s8-header-logo {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 14px; color: rgba(245,242,236,0.28); letter-spacing: 0.05em;
+  }
+  .s8-header-logo span { color: rgba(201,168,76,0.45); }
+
+  /* Title block */
+  .s8-title-block {
+    position: absolute; top: 66px; left: 80px;
+    opacity: 0; animation: fadeUp 0.7s ease forwards 0.2s; z-index: 10;
+  }
+  .s8-eyebrow {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px;
+    letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 6px;
+  }
+  .s8-title {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 38px; line-height: 1.05; color: var(--white);
+    text-shadow: 0 2px 24px rgba(5,3,15,0.9);
+  }
+  .s8-subtitle {
+    font-family: 'Rajdhani', sans-serif; font-weight: 300;
+    font-size: 13px; color: rgba(245,242,236,0.5);
+    margin-top: 6px; letter-spacing: 0.04em;
+  }
+
+  /* Two-panel layout */
+  .s8-panels {
+    position: absolute;
+    top: 148px; left: 80px; right: 80px; bottom: 68px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; z-index: 10;
+  }
+
+  .s8-panel {
+    display: flex; flex-direction: column;
+    border: 1px solid rgba(245,242,236,0.07);
+    border-top: 2px solid rgba(201,168,76,0.4);
+    background: rgba(25,10,70,0.35);
+    border-radius: 3px; overflow: hidden;
+    opacity: 0;
+  }
+  .s8-panel:nth-child(1) { animation: fadeUp 0.6s ease forwards 0.4s; }
+  .s8-panel:nth-child(2) { animation: fadeUp 0.6s ease forwards 0.58s; }
+  .s8-panel:hover { background: rgba(25,10,70,0.5); border-top-color: var(--gold); }
+
+  .s8-panel-header {
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid rgba(245,242,236,0.06);
+  }
+  .s8-panel-num {
+    font-family: 'Rajdhani', sans-serif; font-size: 9px;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 6px; opacity: 0.8;
+  }
+  .s8-panel-title {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: 22px; color: var(--white); line-height: 1.15; margin-bottom: 6px;
+  }
+  .s8-panel-layer {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(201,168,76,0.7); font-weight: 500;
+  }
+
+  .s8-panel-body {
+    padding: 14px 22px; flex: 1;
+    font-family: 'Rajdhani', sans-serif; font-weight: 300;
+    font-size: 13px; line-height: 1.65;
+    color: rgba(245,242,236,0.65); letter-spacing: 0.02em;
+  }
+
+  .s8-panel-caps {
+    padding: 0 22px 14px;
+    display: flex; flex-direction: column; gap: 7px;
+  }
+  .s8-cap-row {
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .s8-cap-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--gold); opacity: 0.55;
+    flex-shrink: 0; margin-top: 5px;
+  }
+  .s8-cap-text {
+    font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 400;
+    color: rgba(245,242,236,0.65); letter-spacing: 0.04em; line-height: 1.4;
+  }
+  .s8-cap-text strong { color: var(--white); font-weight: 600; }
+
+  /* Key metric strip at bottom of each panel */
+  .s8-panel-metrics {
+    margin: 0 22px 16px;
+    padding: 12px 14px;
+    background: rgba(5,3,15,0.4);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 2px;
+    display: flex; gap: 0;
+  }
+  .s8-metric {
+    flex: 1; display: flex; flex-direction: column; gap: 3px;
+    padding: 0 12px; border-right: 1px solid rgba(245,242,236,0.06);
+  }
+  .s8-metric:first-child { padding-left: 0; }
+  .s8-metric:last-child { border-right: none; }
+  .s8-metric-val {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 26px; color: var(--gold); line-height: 1;
+  }
+  .s8-metric-label {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px; font-weight: 400;
+    color: rgba(245,242,236,0.4); letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  /* Standards strip */
+  .s8-panel-standards {
+    padding: 0 22px 18px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .s8-std-item {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .s8-std-dot {
+    width: 3px; height: 3px; border-radius: 50%;
+    background: var(--gold); opacity: 0.4; flex-shrink: 0;
+  }
+  .s8-std-text {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px; font-weight: 300;
+    color: rgba(245,242,236,0.35); letter-spacing: 0.08em;
+  }
+
+  /* Centre divider label */
+  .s8-centre-label {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Rajdhani', sans-serif; font-size: 9px;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(201,168,76,0.3);
+    background: #05030f;
+    padding: 4px 10px; border-radius: 2px;
+    z-index: 11;
+    pointer-events: none;
+  }
+
+  /* Footer */
+  .s8-footer {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; border-top: 1px solid rgba(245,242,236,0.05); z-index: 10;
+  }
+  .s8-footer-left {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,242,236,0.2);
+  }
+  .s8-slide-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 13px;
+    color: rgba(201,168,76,0.4); letter-spacing: 0.1em;
+  }
 </style>
 </head>
 <body>
@@ -2368,6 +2553,145 @@
   </section>
 
 
+  <!-- ═══════════════════════════════════════════
+       SLIDE 8 — MODULES 3 & 4 COMBINED
+  ════════════════════════════════════════════ -->
+  <section class="slide" id="s8">
+
+    <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      <source src="assets/bg-s8.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(5,3,15,0.95) 0%,rgba(5,3,15,0.82) 50%,rgba(5,3,15,0.94) 100%);z-index:1;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(25,10,70,0.35) 0%,transparent 65%);z-index:2;"></div>
+
+    <!-- Header -->
+    <div class="s8-header">
+      <div class="s8-header-badges">
+        <span class="s8-module-badge">Module 03</span>
+        <span class="s8-badge-sep">&amp;</span>
+        <span class="s8-module-badge">Module 04</span>
+      </div>
+      <span class="s8-header-logo">Digit<span>Alchemy</span>&#174;</span>
+    </div>
+
+    <!-- Title -->
+    <div class="s8-title-block">
+      <div class="s8-eyebrow">Market &amp; Revenue Intelligence</div>
+      <div class="s8-title">Know what the market will pay.<br>Know what your project will cost.</div>
+      <div class="s8-subtitle">Two modules. One shared data layer. Every commercial decision informed before it is made.</div>
+    </div>
+
+    <!-- Two panels -->
+    <div class="s8-panels">
+
+      <!-- MODULE 3 -->
+      <div class="s8-panel">
+        <div class="s8-panel-header">
+          <div class="s8-panel-num">Module 03</div>
+          <div class="s8-panel-title">Commercial &amp; Market Intelligence</div>
+          <div class="s8-panel-layer">Market Intelligence Layer</div>
+        </div>
+        <div class="s8-panel-body">
+          Live market data integrated with your development programme. Rent benchmarks, vacancy signals, and competitor pipeline — continuously updated and cross-referenced against your asset type and phase.
+        </div>
+        <div class="s8-panel-caps">
+          <div class="s8-cap-row">
+            <div class="s8-cap-dot"></div>
+            <div class="s8-cap-text"><strong>Rent &amp; yield benchmarks</strong> — asset-class specific, UAE market calibrated</div>
+          </div>
+          <div class="s8-cap-row">
+            <div class="s8-cap-dot"></div>
+            <div class="s8-cap-text"><strong>Vacancy &amp; absorption signals</strong> — demand indicators by submarket</div>
+          </div>
+          <div class="s8-cap-row">
+            <div class="s8-cap-dot"></div>
+            <div class="s8-cap-text"><strong>Competitor pipeline tracking</strong> — supply pressure mapped against your programme</div>
+          </div>
+          <div class="s8-cap-row">
+            <div class="s8-cap-dot"></div>
+            <div class="s8-cap-text"><strong>Demand forecasting</strong> — leasing velocity and revenue-start timing</div>
+          </div>
+        </div>
+        <div class="s8-panel-metrics">
+          <div class="s8-metric">
+            <span class="s8-metric-val">Live</span>
+            <span class="s8-metric-label">Market Data</span>
+          </div>
+          <div class="s8-metric">
+            <span class="s8-metric-val">UAE</span>
+            <span class="s8-metric-label">Market Priority</span>
+          </div>
+          <div class="s8-metric">
+            <span class="s8-metric-val">GCC</span>
+            <span class="s8-metric-label">Expansion Ready</span>
+          </div>
+        </div>
+        <div class="s8-panel-standards">
+          <div class="s8-std-item"><div class="s8-std-dot"></div><span class="s8-std-text">RICS Valuation — Global Standards (Red Book)</span></div>
+          <div class="s8-std-item"><div class="s8-std-dot"></div><span class="s8-std-text">IPMS — International Property Measurement Standards</span></div>
+          <div class="s8-std-item"><div class="s8-std-dot"></div><span class="s8-std-text">DLD Data Integration — Abu Dhabi &amp; Dubai transaction feeds</span></div>
+        </div>
+      </div>
+
+      <!-- MODULE 4 -->
+      <div class="s8-panel">
+        <div class="s8-panel-header">
+          <div class="s8-panel-num">Module 04</div>
+          <div class="s8-panel-title">Feasibility &amp; Revenue Intelligence</div>
+          <div class="s8-panel-layer">Cashflow Intelligence Layer</div>
+        </div>
+        <div class="s8-panel-body">
+          Dynamic feasibility that updates as your project moves. Cost-to-complete, revenue-start timing, and scenario sensitivities — computed from live delivery and market signals, not static spreadsheets.
+        </div>
+        <div class="s8-panel-caps">
+          <div class="s8-cap-row">
+            <div class="s8-cap-dot"></div>
+            <div class="s8-cap-text"><strong>Cost-to-complete modelling</strong> — linked to live procurement and progress data</div>
+          </div>
+          <div class="s8-cap-row">
+            <div class="s8-cap-dot"></div>
+            <div class="s8-cap-text"><strong>Revenue-start timing</strong> — computed from construction programme, not assumed</div>
+          </div>
+          <div class="s8-cap-row">
+            <div class="s8-cap-dot"></div>
+            <div class="s8-cap-text"><strong>Cashflow scenario analysis</strong> — delay, cost overrun, and market shift sensitivities</div>
+          </div>
+          <div class="s8-cap-row">
+            <div class="s8-cap-dot"></div>
+            <div class="s8-cap-text"><strong>Unit mix optimisation</strong> — Periodichotomy&#174;-anchored TTM-06 workstream</div>
+          </div>
+        </div>
+        <div class="s8-panel-metrics">
+          <div class="s8-metric">
+            <span class="s8-metric-val">&#934;0&#8211;7</span>
+            <span class="s8-metric-label">Phase Coverage</span>
+          </div>
+          <div class="s8-metric">
+            <span class="s8-metric-val">TTM-06</span>
+            <span class="s8-metric-label">RE Workstream</span>
+          </div>
+          <div class="s8-metric">
+            <span class="s8-metric-val">Live</span>
+            <span class="s8-metric-label">Not Assumed</span>
+          </div>
+        </div>
+        <div class="s8-panel-standards">
+          <div class="s8-std-item"><div class="s8-std-dot"></div><span class="s8-std-text">RICS Red Book — Valuation &amp; Financial Modelling</span></div>
+          <div class="s8-std-item"><div class="s8-std-dot"></div><span class="s8-std-text">ISO 31000 — Risk Management Framework</span></div>
+          <div class="s8-std-item"><div class="s8-std-dot"></div><span class="s8-std-text">Periodichotomy&#174; TTM-06 — Real Estate Transformation Module</span></div>
+        </div>
+      </div>
+
+    </div><!-- /s8-panels -->
+
+    <footer class="s8-footer">
+      <span class="s8-footer-left">DigitAlchemy&#174; Tech Limited &nbsp;&#183;&nbsp; ADGM No. 35004 &nbsp;&#183;&nbsp; Abu Dhabi, UAE</span>
+      <span class="s8-slide-num">08 / 12</span>
+    </footer>
+
+  </section>
+
+
 </div>
 
 <!-- Nav -->
@@ -2385,6 +2709,7 @@
     <div class="nav-dot" data-slide="4"></div>
     <div class="nav-dot" data-slide="5"></div>
     <div class="nav-dot" data-slide="6"></div>
+    <div class="nav-dot" data-slide="7"></div>
   </div>
   <div class="nav-arrow" id="nav-next" title="Next">
     <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
