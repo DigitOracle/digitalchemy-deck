@@ -1803,12 +1803,196 @@
     font-family: 'Cormorant Garamond', serif; font-size: 13px;
     color: rgba(201,168,76,0.4); letter-spacing: 0.1em;
   }
+
+  /* ════════════════════════════════════════════════════
+     SLIDE 2 — THE DEVELOPMENT JOURNEY
+  ════════════════════════════════════════════════════ */
+  #s2 { background: #05030f; }
+
+  .s2-header {
+    position: absolute; top: 0; left: 0; right: 0; height: 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+    background: rgba(25,10,70,0.4); backdrop-filter: blur(4px);
+    z-index: 10;
+  }
+  .s2-header-left {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(245,242,236,0.4);
+  }
+  .s2-header-logo {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 14px; color: rgba(245,242,236,0.28); letter-spacing: 0.05em;
+  }
+  .s2-header-logo span { color: rgba(201,168,76,0.45); }
+
+  /* Title */
+  .s2-title-block {
+    position: absolute; top: 66px; left: 80px; right: 80px;
+    text-align: center;
+    opacity: 0; animation: fadeUp 0.7s ease forwards 0.2s; z-index: 10;
+  }
+  .s2-eyebrow {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px;
+    letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 6px;
+  }
+  .s2-title {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 36px; line-height: 1.1; color: var(--white);
+  }
+  .s2-subtitle {
+    font-family: 'Rajdhani', sans-serif; font-weight: 300;
+    font-size: 13px; color: rgba(245,242,236,0.45);
+    margin-top: 6px; letter-spacing: 0.04em;
+  }
+
+  /* Journey timeline */
+  .s2-journey {
+    position: absolute;
+    top: 168px; left: 48px; right: 48px; bottom: 88px;
+    z-index: 10;
+    opacity: 0; animation: fadeUp 0.7s ease forwards 0.4s;
+  }
+
+  /* Horizontal spine */
+  .s2-spine {
+    position: absolute;
+    top: 50%; left: 60px; right: 60px;
+    height: 1px;
+    background: linear-gradient(to right,
+      transparent 0%,
+      rgba(201,168,76,0.25) 8%,
+      rgba(201,168,76,0.25) 92%,
+      transparent 100%);
+    transform: translateY(-50%);
+  }
+
+  /* Stage nodes */
+  .s2-stages {
+    position: absolute; inset: 0;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+
+  .s2-stage {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 0;
+    width: 148px; cursor: default;
+  }
+
+  /* Top card (above spine) */
+  .s2-stage-top {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(25,10,70,0.5);
+    border: 1px solid rgba(245,242,236,0.07);
+    border-bottom: none;
+    border-radius: 3px 3px 0 0;
+    min-height: 100px;
+    display: flex; flex-direction: column; gap: 6px;
+    margin-bottom: 0;
+  }
+  .s2-stage:nth-child(even) .s2-stage-top {
+    background: rgba(25,10,70,0.3);
+  }
+
+  /* Node dot on spine */
+  .s2-stage-node {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid rgba(201,168,76,0.5);
+    flex-shrink: 0; z-index: 2; position: relative;
+  }
+  .s2-stage:hover .s2-stage-node {
+    background: var(--gold);
+    box-shadow: 0 0 12px rgba(201,168,76,0.4);
+  }
+
+  /* Bottom card (below spine) */
+  .s2-stage-bot {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(5,3,15,0.5);
+    border: 1px solid rgba(245,242,236,0.07);
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    min-height: 80px;
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .s2-stage:nth-child(even) .s2-stage-bot {
+    background: rgba(5,3,15,0.3);
+  }
+
+  /* Active stage highlight */
+  .s2-stage.active .s2-stage-top,
+  .s2-stage.active .s2-stage-bot {
+    border-color: rgba(201,168,76,0.28);
+    background: rgba(25,10,70,0.65);
+  }
+  .s2-stage.active .s2-stage-node {
+    background: var(--gold);
+    border-color: var(--gold);
+    box-shadow: 0 0 16px rgba(201,168,76,0.5);
+  }
+
+  .s2-stage-phase {
+    font-family: 'Rajdhani', sans-serif; font-size: 8px;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; opacity: 0.7;
+  }
+  .s2-stage-name {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: 14px; color: var(--white); line-height: 1.2;
+  }
+  .s2-stage-pain {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 300;
+    color: rgba(245,242,236,0.5); line-height: 1.4; letter-spacing: 0.02em;
+  }
+  .s2-stage-module {
+    font-family: 'Rajdhani', sans-serif; font-size: 9px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(201,168,76,0.6); font-weight: 500;
+    padding: 3px 7px;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 2px; display: inline-block;
+    width: fit-content;
+  }
+  .s2-stage-output {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 300;
+    color: rgba(245,242,236,0.45); line-height: 1.4;
+  }
+
+  /* Bottom tagline */
+  .s2-tagline {
+    position: absolute; bottom: 56px; left: 0; right: 0;
+    text-align: center; z-index: 10;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 16px; font-weight: 300;
+    color: rgba(245,242,236,0.35);
+    opacity: 0; animation: fadeUp 0.6s ease forwards 1.0s;
+  }
+  .s2-tagline span { color: rgba(201,168,76,0.55); }
+
+  /* Footer */
+  .s2-footer {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 42px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; border-top: 1px solid rgba(245,242,236,0.05); z-index: 10;
+  }
+  .s2-footer-left {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,242,236,0.2);
+  }
+  .s2-slide-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 13px;
+    color: rgba(201,168,76,0.4); letter-spacing: 0.1em;
+  }
+
 </style>
-</head>
-<body>
-
-<div class="deck">
-
   <!-- ══ SLIDE 1 ══════════════════════════════ -->
   <section class="slide active" id="s1">
 
@@ -1860,95 +2044,110 @@
 
   </section>
 
-  <!-- ══ SLIDE 2 ══════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════
+       SLIDE 2 — THE DEVELOPMENT JOURNEY
+  ════════════════════════════════════════════ -->
   <section class="slide" id="s2">
 
     <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
       <source src="assets/bg-s2.mp4" type="video/mp4">
     </video>
-    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(5,3,15,0.94) 0%,rgba(5,3,15,0.82) 55%,rgba(5,3,15,0.92) 100%);z-index:1;"></div>
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,transparent 60%,rgba(5,3,15,0.5) 100%);z-index:2;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,3,15,0.96) 0%,rgba(5,3,15,0.88) 50%,rgba(5,3,15,0.96) 100%);z-index:1;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(25,10,70,0.3) 0%,transparent 70%);z-index:2;"></div>
 
     <!-- Header -->
     <div class="s2-header">
-      <span class="s2-header-eyebrow">Engagement Model</span>
+      <span class="s2-header-left">The Problem We Solve</span>
       <span class="s2-header-logo">Digit<span>Alchemy</span>&#174;</span>
     </div>
 
     <!-- Title -->
     <div class="s2-title-block">
-      <div class="s2-title">How we engage.</div>
-      <div class="s2-subtitle">Every engagement is scoped to your asset, your phase, and your ambition.</div>
+      <div class="s2-eyebrow">Every Project. Every Phase. Every Decision.</div>
+      <div class="s2-title">The development journey is broken at every stage.</div>
+      <div class="s2-subtitle">Fragmented data. Disconnected disciplines. Decisions made on assumptions, not intelligence.</div>
     </div>
 
-    <!-- Gateway card -->
-    <div class="s2-gateway">
-      <span class="s2-gateway-badge">Always First</span>
-      <div class="s2-gateway-divider"></div>
-      <div class="s2-gateway-main">
-        <div class="s2-gateway-title">Diagnostic Audit</div>
-        <div class="s2-gateway-desc">An <strong>ISO 30105-9</strong> structured assessment of your current digital maturity — technology stack, data flows, standards alignment, and governance gaps. Delivers a <strong>RIBA-aligned transformation roadmap</strong> with a clear pathway into full platform deployment. Every engagement begins here.</div>
-      </div>
-      <div class="s2-gateway-tags">
-        <span class="s2-gateway-tag">ISO 30105-9</span>
-        <span class="s2-gateway-tag">Digital Maturity</span>
-        <span class="s2-gateway-tag">RIBA Roadmap</span>
-        <span class="s2-gateway-tag">Tech Stack Review</span>
-      </div>
-    </div>
-
-    <!-- Arrow from gateway to cards -->
-    <div class="s2-gateway-arrow">
-      <div class="s2-gateway-arrow-line"></div>
-      <div class="s2-gateway-arrow-head"></div>
-    </div>
-
-    <!-- Three engagement cards -->
-    <div class="s2-cards">
-
-      <div class="s2-card">
-        <div class="s2-card-num">Stream 01</div>
-        <div class="s2-card-title">Project Engagement</div>
-        <div class="s2-card-body">Fixed-scope, SOW-governed delivery tied to specific project phases or workstreams. Ideal for organisations seeking targeted intelligence on a live development.</div>
-        <div class="s2-card-scope">Scope and investment determined by phase, asset type, and complexity</div>
-      </div>
-
-      <div class="s2-card">
-        <div class="s2-card-num">Stream 02</div>
-        <div class="s2-card-title">Ongoing Advisory</div>
-        <div class="s2-card-body">A retainer relationship providing continuous regulatory intelligence, standards monitoring, and access to DigitOracle&#174; across your portfolio — regardless of project stage.</div>
-        <div class="s2-card-scope">Monthly engagement — calibrated to portfolio size and query volume</div>
-      </div>
-
-      <div class="s2-card">
-        <div class="s2-card-num">Stream 03</div>
-        <div class="s2-card-title">Platform License</div>
-        <div class="s2-card-body">Full access to the DigitAlchemy&#174; platform. Scaled by asset complexity — Standard, Complex, or Sovereign. The terminal destination for organisations ready to embed intelligence into every decision.</div>
-        <div class="s2-card-scope">Annual license — scaled by asset complexity tier, not per seat</div>
-      </div>
-
-    </div>
-
-    <!-- Journey flow -->
+    <!-- Journey -->
     <div class="s2-journey">
-      <div class="s2-journey-step">
-        <div class="s2-journey-num">Step 01</div>
-        <div class="s2-journey-label">Diagnostic</div>
-        <div class="s2-journey-sub">Understand where you are</div>
-      </div>
-      <div class="s2-journey-arrow">&#8594;</div>
-      <div class="s2-journey-step">
-        <div class="s2-journey-num">Step 02</div>
-        <div class="s2-journey-label">Project or Advisory</div>
-        <div class="s2-journey-sub">Prove value, build corpus</div>
-      </div>
-      <div class="s2-journey-arrow">&#8594;</div>
-      <div class="s2-journey-step">
-        <div class="s2-journey-num">Step 03</div>
-        <div class="s2-journey-label">Platform License</div>
-        <div class="s2-journey-sub">Embed intelligence organisation-wide</div>
-      </div>
-      <div class="s2-journey-tagline">Each step de-risks and accelerates the <span>next</span></div>
+      <div class="s2-spine"></div>
+      <div class="s2-stages">
+
+        <!-- Stage 1: Strategy -->
+        <div class="s2-stage">
+          <div class="s2-stage-top">
+            <span class="s2-stage-phase">&#934;0 &#8212; &#934;1</span>
+            <span class="s2-stage-name">Strategy &amp; Feasibility</span>
+            <span class="s2-stage-pain">Assumptions substitute for data. Market sizing is guesswork.</span>
+          </div>
+          <div class="s2-stage-node"></div>
+          <div class="s2-stage-bot">
+            <span class="s2-stage-module">Mod. 03 + 04</span>
+            <span class="s2-stage-output">Market intelligence. Feasibility modelling. Revenue scenarios.</span>
+          </div>
+        </div>
+
+        <!-- Stage 2: Design -->
+        <div class="s2-stage active">
+          <div class="s2-stage-top">
+            <span class="s2-stage-phase">&#934;2 &#8212; &#934;3</span>
+            <span class="s2-stage-name">Design &amp; Compliance</span>
+            <span class="s2-stage-pain">Regulatory review is manual. Submissions rejected. 12&#8211;18 week cycles.</span>
+          </div>
+          <div class="s2-stage-node"></div>
+          <div class="s2-stage-bot">
+            <span class="s2-stage-module">DigitOracle&#174;</span>
+            <span class="s2-stage-output">Deterministic compliance. Standards-traced outputs. Zero hallucination.</span>
+          </div>
+        </div>
+
+        <!-- Stage 3: Procurement -->
+        <div class="s2-stage">
+          <div class="s2-stage-top">
+            <span class="s2-stage-phase">&#934;3 &#8212; &#934;4</span>
+            <span class="s2-stage-name">Procurement &amp; Packages</span>
+            <span class="s2-stage-pain">BOQ errors. Cost overruns locked in before construction starts.</span>
+          </div>
+          <div class="s2-stage-node"></div>
+          <div class="s2-stage-bot">
+            <span class="s2-stage-module">Mod. 01</span>
+            <span class="s2-stage-output">Package tracking. Cost intelligence. Live procurement signals.</span>
+          </div>
+        </div>
+
+        <!-- Stage 4: Construction -->
+        <div class="s2-stage">
+          <div class="s2-stage-top">
+            <span class="s2-stage-phase">&#934;4 &#8212; &#934;5</span>
+            <span class="s2-stage-name">Construction &amp; Delivery</span>
+            <span class="s2-stage-pain">Progress invisible. Delays compound. Plan vs actual unknown until too late.</span>
+          </div>
+          <div class="s2-stage-node"></div>
+          <div class="s2-stage-bot">
+            <span class="s2-stage-module">Mod. 01 + 02</span>
+            <span class="s2-stage-output">Schedule intelligence. Delay signals. BIM-linked progress monitoring.</span>
+          </div>
+        </div>
+
+        <!-- Stage 5: Handover & Operations -->
+        <div class="s2-stage">
+          <div class="s2-stage-top">
+            <span class="s2-stage-phase">&#934;5 &#8212; &#934;7</span>
+            <span class="s2-stage-name">Handover &amp; Operations</span>
+            <span class="s2-stage-pain">Sensor gaps. Asset data lost at handover. No operational intelligence.</span>
+          </div>
+          <div class="s2-stage-node"></div>
+          <div class="s2-stage-bot">
+            <span class="s2-stage-module">VIPER&#174;</span>
+            <span class="s2-stage-output">Derived sensor specs. BIM-linked. Regulatory-compliant from day one.</span>
+          </div>
+        </div>
+
+      </div><!-- /s2-stages -->
+    </div><!-- /s2-journey -->
+
+    <div class="s2-tagline">
+      DigitAlchemy&#174; is the <span>single intelligence layer</span> that spans every phase — strategy to operations.
     </div>
 
     <footer class="s2-footer">
@@ -1957,6 +2156,7 @@
     </footer>
 
   </section>
+
 
   <!-- ══ SLIDE 3 ══════════════════════════════ -->
   <section class="slide" id="s3">
@@ -2048,7 +2248,7 @@
 
     <footer class="s3-footer">
       <span class="left">DigitAlchemy Tech Limited &nbsp;·&nbsp; ADGM No. 35004 &nbsp;·&nbsp; Confidential</span>
-      <span class="right">03 / 12</span>
+      <span class="right">04 / 12</span>
     </footer>
 
   </section>
@@ -2167,7 +2367,7 @@
     <!-- Footer -->
     <footer class="s4-footer" style="z-index:10;">
       <span class="s4-footer-left">DigitAlchemy&#174; Tech Limited &nbsp;&#183;&nbsp; ADGM No. 35004 &nbsp;&#183;&nbsp; Abu Dhabi, UAE</span>
-      <span class="s4-slide-num">04 / 12</span>
+      <span class="s4-slide-num">05 / 12</span>
     </footer>
 
   </section>
@@ -2282,7 +2482,7 @@
 
     <footer class="s5-footer">
       <span class="s5-footer-left">DigitAlchemy&#174; Tech Limited &nbsp;&#183;&nbsp; ADGM No. 35004 &nbsp;&#183;&nbsp; Abu Dhabi, UAE</span>
-      <span class="s5-slide-num">05 / 12</span>
+      <span class="s5-slide-num">06 / 12</span>
     </footer>
 
   </section>
@@ -2397,7 +2597,7 @@
 
     <footer class="s6-footer">
       <span class="s6-footer-left">DigitAlchemy&#174; Tech Limited &nbsp;&#183;&nbsp; ADGM No. 35004 &nbsp;&#183;&nbsp; Abu Dhabi, UAE</span>
-      <span class="s6-slide-num">06 / 12</span>
+      <span class="s6-slide-num">07 / 12</span>
     </footer>
 
   </section>
@@ -2547,7 +2747,7 @@
 
     <footer class="s7-footer">
       <span class="s7-footer-left">DigitAlchemy&#174; Tech Limited &nbsp;&#183;&nbsp; ADGM No. 35004 &nbsp;&#183;&nbsp; Abu Dhabi, UAE</span>
-      <span class="s7-slide-num">07 / 12</span>
+      <span class="s7-slide-num">08 / 12</span>
     </footer>
 
   </section>
@@ -2686,7 +2886,7 @@
 
     <footer class="s8-footer">
       <span class="s8-footer-left">DigitAlchemy&#174; Tech Limited &nbsp;&#183;&nbsp; ADGM No. 35004 &nbsp;&#183;&nbsp; Abu Dhabi, UAE</span>
-      <span class="s8-slide-num">08 / 12</span>
+      <span class="s8-slide-num">09 / 12</span>
     </footer>
 
   </section>
@@ -2694,6 +2894,104 @@
 
 </div>
 
+
+  <!-- ══ SLIDE 2 ══════════════════════════════ -->
+  <section class="slide" id="s10">
+
+    <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      <source src="assets/bg-s10.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(5,3,15,0.94) 0%,rgba(5,3,15,0.82) 55%,rgba(5,3,15,0.92) 100%);z-index:1;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,transparent 60%,rgba(5,3,15,0.5) 100%);z-index:2;"></div>
+
+    <!-- Header -->
+    <div class="s10-header">
+      <span class="s10-header-eyebrow">Engagement Model</span>
+      <span class="s10-header-logo">Digit<span>Alchemy</span>&#174;</span>
+    </div>
+
+    <!-- Title -->
+    <div class="s10-title-block">
+      <div class="s10-title">How we engage.</div>
+      <div class="s10-subtitle">Every engagement is scoped to your asset, your phase, and your ambition.</div>
+    </div>
+
+    <!-- Gateway card -->
+    <div class="s10-gateway">
+      <span class="s10-gateway-badge">Always First</span>
+      <div class="s10-gateway-divider"></div>
+      <div class="s10-gateway-main">
+        <div class="s10-gateway-title">Diagnostic Audit</div>
+        <div class="s10-gateway-desc">An <strong>ISO 30105-9</strong> structured assessment of your current digital maturity — technology stack, data flows, standards alignment, and governance gaps. Delivers a <strong>RIBA-aligned transformation roadmap</strong> with a clear pathway into full platform deployment. Every engagement begins here.</div>
+      </div>
+      <div class="s10-gateway-tags">
+        <span class="s10-gateway-tag">ISO 30105-9</span>
+        <span class="s10-gateway-tag">Digital Maturity</span>
+        <span class="s10-gateway-tag">RIBA Roadmap</span>
+        <span class="s10-gateway-tag">Tech Stack Review</span>
+      </div>
+    </div>
+
+    <!-- Arrow from gateway to cards -->
+    <div class="s10-gateway-arrow">
+      <div class="s10-gateway-arrow-line"></div>
+      <div class="s10-gateway-arrow-head"></div>
+    </div>
+
+    <!-- Three engagement cards -->
+    <div class="s10-cards">
+
+      <div class="s10-card">
+        <div class="s10-card-num">Stream 01</div>
+        <div class="s10-card-title">Project Engagement</div>
+        <div class="s10-card-body">Fixed-scope, SOW-governed delivery tied to specific project phases or workstreams. Ideal for organisations seeking targeted intelligence on a live development.</div>
+        <div class="s10-card-scope">Scope and investment determined by phase, asset type, and complexity</div>
+      </div>
+
+      <div class="s10-card">
+        <div class="s10-card-num">Stream 02</div>
+        <div class="s10-card-title">Ongoing Advisory</div>
+        <div class="s10-card-body">A retainer relationship providing continuous regulatory intelligence, standards monitoring, and access to DigitOracle&#174; across your portfolio — regardless of project stage.</div>
+        <div class="s10-card-scope">Monthly engagement — calibrated to portfolio size and query volume</div>
+      </div>
+
+      <div class="s10-card">
+        <div class="s10-card-num">Stream 03</div>
+        <div class="s10-card-title">Platform License</div>
+        <div class="s10-card-body">Full access to the DigitAlchemy&#174; platform. Scaled by asset complexity — Standard, Complex, or Sovereign. The terminal destination for organisations ready to embed intelligence into every decision.</div>
+        <div class="s10-card-scope">Annual license — scaled by asset complexity tier, not per seat</div>
+      </div>
+
+    </div>
+
+    <!-- Journey flow -->
+    <div class="s10-journey">
+      <div class="s10-journey-step">
+        <div class="s10-journey-num">Step 01</div>
+        <div class="s10-journey-label">Diagnostic</div>
+        <div class="s10-journey-sub">Understand where you are</div>
+      </div>
+      <div class="s10-journey-arrow">&#8594;</div>
+      <div class="s10-journey-step">
+        <div class="s10-journey-num">Step 02</div>
+        <div class="s10-journey-label">Project or Advisory</div>
+        <div class="s10-journey-sub">Prove value, build corpus</div>
+      </div>
+      <div class="s10-journey-arrow">&#8594;</div>
+      <div class="s10-journey-step">
+        <div class="s10-journey-num">Step 03</div>
+        <div class="s10-journey-label">Platform License</div>
+        <div class="s10-journey-sub">Embed intelligence organisation-wide</div>
+      </div>
+      <div class="s10-journey-tagline">Each step de-risks and accelerates the <span>next</span></div>
+    </div>
+
+    <footer class="s10-footer">
+      <span class="s10-footer-left">DigitAlchemy&#174; Tech Limited &nbsp;&#183;&nbsp; ADGM No. 35004 &nbsp;&#183;&nbsp; Abu Dhabi, UAE</span>
+      <span class="s10-slide-num">10 / 12</span>
+    </footer>
+
+  </section>
 <!-- Nav -->
 <div class="nav">
   <div class="nav-arrow" id="nav-prev" title="Previous">
