@@ -525,7 +525,7 @@
     position: fixed;
     bottom: 18px; left: 50%;
     transform: translateX(-50%);
-    display: flex; gap: 8px;
+    display: flex; align-items: center; gap: 10px;
     z-index: 200;
   }
   .nav-dot {
@@ -539,6 +539,19 @@
     background: var(--gold);
     transform: scale(1.4);
   }
+  .nav-dots-row {
+    display: flex; gap: 8px; align-items: center;
+  }
+  .nav-arrow {
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    opacity: 0.35;
+    transition: opacity 0.2s, transform 0.15s;
+    flex-shrink: 0;
+  }
+  .nav-arrow:hover { opacity: 0.9; transform: scale(1.15); }
+  .nav-arrow svg { width: 14px; height: 14px; }
 
   .key-hint {
     position: fixed;
@@ -1215,6 +1228,155 @@
   .s4-col-label { font-size: 10px !important; font-weight: 600 !important; color: rgba(245,242,236,0.5) !important; letter-spacing: 0.28em !important; }
   .s4-col-outputs .s4-card-label { font-size: 13px !important; }
 
+
+  /* ════════════════════════════════════════════════════
+     SLIDE 5 — WHAT YOU CAN ASK IT
+  ════════════════════════════════════════════════════ */
+  #s5 { background: #05030f; }
+
+  .s5-header {
+    position: absolute; top: 0; left: 0; right: 0; height: 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+    background: rgba(25,10,70,0.35);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+  }
+  .s5-header-eyebrow {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px;
+    letter-spacing: 0.36em; text-transform: uppercase; color: var(--gold);
+  }
+  .s5-header-logo {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 14px; color: rgba(245,242,236,0.28); letter-spacing: 0.05em;
+  }
+  .s5-header-logo span { color: rgba(201,168,76,0.45); }
+
+  /* Title */
+  .s5-title-block {
+    position: absolute; top: 72px; left: 80px;
+    opacity: 0; animation: fadeUp 0.7s ease forwards 0.2s;
+  }
+  .s5-title {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 44px; line-height: 1.05; color: var(--white);
+    letter-spacing: -0.01em; text-shadow: 0 2px 20px rgba(5,3,15,0.9);
+  }
+  .s5-subtitle {
+    font-family: 'Rajdhani', sans-serif; font-weight: 400;
+    font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(245,242,236,0.5); margin-top: 7px;
+  }
+
+  /* Query grid */
+  .s5-grid {
+    position: absolute;
+    top: 158px; left: 80px; right: 80px; bottom: 68px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .s5-query {
+    background: rgba(25,10,70,0.45);
+    border: 1px solid rgba(245,242,236,0.07);
+    border-left: 2px solid rgba(201,168,76,0.35);
+    border-radius: 3px;
+    padding: 22px 24px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    opacity: 0;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .s5-query:hover {
+    border-color: rgba(201,168,76,0.5);
+    border-left-color: var(--gold);
+    background: rgba(25,10,70,0.6);
+  }
+  .s5-query:nth-child(1) { animation: fadeUp 0.55s ease forwards 0.4s; }
+  .s5-query:nth-child(2) { animation: fadeUp 0.55s ease forwards 0.58s; }
+  .s5-query:nth-child(3) { animation: fadeUp 0.55s ease forwards 0.76s; }
+  .s5-query:nth-child(4) { animation: fadeUp 0.55s ease forwards 0.94s; }
+
+  .s5-q-top { display: flex; align-items: flex-start; gap: 12px; }
+
+  .s5-prompt-icon {
+    font-family: 'Rajdhani', sans-serif; font-size: 13px;
+    color: var(--gold); font-weight: 600; opacity: 0.7;
+    flex-shrink: 0; margin-top: 2px; letter-spacing: 0;
+  }
+
+  .s5-question {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-weight: 300; font-size: 18px; line-height: 1.35;
+    color: var(--white); letter-spacing: 0.01em;
+  }
+
+  .s5-divider {
+    height: 1px; margin: 14px 0;
+    background: linear-gradient(to right, rgba(201,168,76,0.25), transparent);
+  }
+
+  .s5-answer-row { display: flex; align-items: flex-start; gap: 10px; }
+  .s5-answer-icon {
+    font-family: 'Rajdhani', sans-serif; font-size: 9px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; flex-shrink: 0; margin-top: 3px;
+    opacity: 0.8;
+  }
+  .s5-answer {
+    font-family: 'Rajdhani', sans-serif; font-weight: 400;
+    font-size: 13px; line-height: 1.5;
+    color: rgba(245,242,236,0.72); letter-spacing: 0.03em;
+  }
+  .s5-answer strong {
+    color: var(--white); font-weight: 600;
+  }
+
+  .s5-tag-row {
+    display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap;
+  }
+  .s5-tag {
+    font-family: 'Rajdhani', sans-serif; font-size: 9px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(201,168,76,0.6); padding: 3px 8px;
+    border: 1px solid rgba(201,168,76,0.18); border-radius: 2px;
+  }
+
+  /* Bottom bar */
+  .s5-bottom-bar {
+    position: absolute; bottom: 68px; left: 80px; right: 80px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px;
+    opacity: 0; animation: fadeUp 0.6s ease forwards 1.2s;
+  }
+  .s5-bottom-line {
+    flex: 1; height: 1px;
+    background: linear-gradient(to right, transparent, rgba(201,168,76,0.2), transparent);
+  }
+  .s5-bottom-text {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 15px; color: rgba(245,242,236,0.45); letter-spacing: 0.02em;
+  }
+  .s5-bottom-text span { color: var(--gold); }
+
+  /* Footer */
+  .s5-footer {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; border-top: 1px solid rgba(245,242,236,0.05);
+    z-index: 10;
+  }
+  .s5-footer-left {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(245,242,236,0.2);
+  }
+  .s5-slide-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 13px;
+    color: rgba(201,168,76,0.4); letter-spacing: 0.1em;
+  }
 </style>
 </head>
 <body>
@@ -1599,14 +1761,142 @@
   </section>
 
 
+  <!-- ═══════════════════════════════════════════
+       SLIDE 5 — WHAT YOU CAN ASK IT
+  ════════════════════════════════════════════ -->
+  <section class="slide" id="s5">
+
+    <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      <source src="assets/bg-s5.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(5,3,15,0.94) 0%,rgba(5,3,15,0.82) 55%,rgba(5,3,15,0.92) 100%);z-index:1;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(25,10,70,0.4) 0%,transparent 65%);z-index:2;"></div>
+
+    <div class="s5-header">
+      <span class="s5-header-eyebrow">Conversational Intelligence</span>
+      <span class="s5-header-logo">Digit<span>Alchemy</span>&#174;</span>
+    </div>
+
+    <div class="s5-title-block" style="z-index:10;">
+      <div class="s5-title">What you can ask it.</div>
+      <div class="s5-subtitle">Any question. Any phase. Answered from live data.</div>
+    </div>
+
+    <div class="s5-grid" style="z-index:10;">
+
+      <!-- Q1 -->
+      <div class="s5-query">
+        <div>
+          <div class="s5-q-top">
+            <span class="s5-prompt-icon">&#8250;</span>
+            <div class="s5-question">"What's the current cost-to-complete versus the original feasibility?"</div>
+          </div>
+          <div class="s5-divider"></div>
+          <div class="s5-answer-row">
+            <span class="s5-answer-icon">&#9632;</span>
+            <div class="s5-answer">Cost-to-complete is <strong>AED 284M</strong>, against a feasibility baseline of <strong>AED 271M</strong> — a variance of <strong>+4.8%</strong>. Primary driver: structural packages in Zone C.</div>
+          </div>
+        </div>
+        <div class="s5-tag-row">
+          <span class="s5-tag">Feasibility</span>
+          <span class="s5-tag">Cost Intelligence</span>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="s5-query">
+        <div>
+          <div class="s5-q-top">
+            <span class="s5-prompt-icon">&#8250;</span>
+            <div class="s5-question">"Which procurement packages are currently at risk of delay?"</div>
+          </div>
+          <div class="s5-divider"></div>
+          <div class="s5-answer-row">
+            <span class="s5-answer-icon">&#9632;</span>
+            <div class="s5-answer"><strong>3 packages</strong> are flagged: MEP fit-out (lead time breach), facade glazing (approval pending), and lift installation (programme float &lt; 5 days).</div>
+          </div>
+        </div>
+        <div class="s5-tag-row">
+          <span class="s5-tag">Procurement</span>
+          <span class="s5-tag">Risk</span>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="s5-query">
+        <div>
+          <div class="s5-q-top">
+            <span class="s5-prompt-icon">&#8250;</span>
+            <div class="s5-question">"What does leasing revenue look like if construction slips three months?"</div>
+          </div>
+          <div class="s5-divider"></div>
+          <div class="s5-answer-row">
+            <span class="s5-answer-icon">&#9632;</span>
+            <div class="s5-answer">A 3-month slip moves revenue-start to <strong>Q2 2027</strong>. Net impact: <strong>AED 18.4M</strong> deferred income. IRR sensitivity: <strong>&#8722;0.6%</strong> on base case.</div>
+          </div>
+        </div>
+        <div class="s5-tag-row">
+          <span class="s5-tag">Revenue</span>
+          <span class="s5-tag">Scenario Modelling</span>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="s5-query">
+        <div>
+          <div class="s5-q-top">
+            <span class="s5-prompt-icon">&#8250;</span>
+            <div class="s5-question">"Is this model compliant with our handover checklist?"</div>
+          </div>
+          <div class="s5-divider"></div>
+          <div class="s5-answer-row">
+            <span class="s5-answer-icon">&#9632;</span>
+            <div class="s5-answer">Model is <strong>91% compliant</strong>. <strong>7 elements</strong> missing COBie data — maintenance schedules and asset classification. Estimated resolution: <strong>2 days</strong>.</div>
+          </div>
+        </div>
+        <div class="s5-tag-row">
+          <span class="s5-tag">Model Review</span>
+          <span class="s5-tag">Handover</span>
+        </div>
+      </div>
+
+    </div><!-- /s5-grid -->
+
+    <div class="s5-bottom-bar" style="z-index:10;">
+      <div class="s5-bottom-line"></div>
+      <div class="s5-bottom-text">Every answer is traceable to a <span>live data source</span> — not a static report.</div>
+      <div class="s5-bottom-line"></div>
+    </div>
+
+    <footer class="s5-footer">
+      <span class="s5-footer-left">DigitAlchemy&#174; Tech Limited &nbsp;&#183;&nbsp; ADGM No. 35004 &nbsp;&#183;&nbsp; Abu Dhabi, UAE</span>
+      <span class="s5-slide-num">05 / 12</span>
+    </footer>
+
+  </section>
+
+
 </div>
 
 <!-- Nav -->
 <div class="nav">
-  <div class="nav-dot active" data-slide="0"></div>
-  <div class="nav-dot" data-slide="1"></div>
-  <div class="nav-dot" data-slide="2"></div>
-  <div class="nav-dot" data-slide="3"></div>
+  <div class="nav-arrow" id="nav-prev" title="Previous">
+    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="9,2 4,7 9,12" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="nav-dots-row">
+    <div class="nav-dot active" data-slide="0"></div>
+    <div class="nav-dot" data-slide="1"></div>
+    <div class="nav-dot" data-slide="2"></div>
+    <div class="nav-dot" data-slide="3"></div>
+    <div class="nav-dot" data-slide="4"></div>
+  </div>
+  <div class="nav-arrow" id="nav-next" title="Next">
+    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="5,2 10,7 5,12" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
 </div>
 <div class="key-hint">← → navigate</div>
 
@@ -1637,6 +1927,8 @@
   });
 
   dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+  document.getElementById('nav-prev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('nav-next').addEventListener('click', () => goTo(current + 1));
 </script>
 </body>
 </html>
