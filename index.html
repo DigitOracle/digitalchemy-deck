@@ -304,19 +304,22 @@
   #s2 { background: #05030f; }
 
   .s2-video {
-    position: absolute; inset: 0; overflow: hidden;
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
   }
   .s2-video video {
-    position: absolute; top: 50%; left: 50%;
+    position: absolute;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     min-width: 100%; min-height: 100%;
+    width: auto; height: auto;
     object-fit: cover;
-    filter: brightness(0.2) saturate(0.5);
   }
   .s2-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(to bottom,
-      rgba(5,3,15,0.75) 0%, rgba(25,10,70,0.78) 50%, rgba(5,3,15,0.88) 100%);
+      rgba(5,3,15,0.55) 0%, rgba(25,10,70,0.65) 50%, rgba(5,3,15,0.72) 100%);
   }
   .s2-grid {
     position: absolute; inset: 0;
@@ -409,7 +412,7 @@
   .s2-stage-name {
     font-family: 'Rajdhani', sans-serif; font-weight: 600;
     font-size: 11px; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--white);
+    text-transform: uppercase; color: var(--gold);
     display: block; margin-bottom: 4px;
   }
   .s2-stage-desc {
@@ -419,8 +422,23 @@
     display: block;
   }
 
-  /* Bottom insight strip */
-  .s2-insight {
+  
+
+  
+
+  
+
+  
+
+  /* Stage icon */
+  .s2-stage-icon {
+    display: block; font-size: 13px; margin-bottom: 5px;
+    color: rgba(201,168,76,0.5);
+  }
+
+  
+
+
     position: absolute; bottom: 52px; left: 64px; right: 64px;
     display: flex; gap: 3px;
   }
@@ -452,13 +470,6 @@
   }
   .s2-footer .left { color: rgba(201,168,76,0.4); }
   .s2-footer .right { color: var(--white-20); }
-
-  /* Heavier ink overlay — content-dense slide needs contrast */
-  .s2-overlay {
-    position: absolute; inset: 0;
-    background:
-      linear-gradient(to bottom, rgba(5,3,15,0.72) 0%, rgba(25,10,70,0.82) 50%, rgba(5,3,15,0.88) 100%);
-  }
 
   .s2-grid {
     position: absolute; inset: 0;
@@ -729,6 +740,188 @@
   }
   .s2-footer .left { color: rgba(201,168,76,0.4); }
   .s2-footer .right { color: var(--white-20); }
+
+  /* ════════════════════════════════════════════════════
+     SLIDE 3 — PLATFORM AT A GLANCE
+  ════════════════════════════════════════════════════ */
+  #s3 { background: #05030f; }
+
+  .s3-video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+  }
+  .s3-video video {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto;
+    object-fit: cover;
+  }
+  .s3-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom,
+      rgba(5,3,15,0.60) 0%, rgba(25,10,70,0.72) 50%, rgba(5,3,15,0.80) 100%);
+  }
+  .s3-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.025) 1px, transparent 1px);
+    background-size: 80px 80px; pointer-events: none;
+  }
+
+  /* Header */
+  .s3-header {
+    position: absolute; top: 36px; left: 80px; right: 80px;
+    display: flex; align-items: center; gap: 16px;
+    opacity: 0; animation: fadeUp 0.7s ease forwards 0.2s;
+  }
+  .s3-header-label {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--gold); white-space: nowrap;
+  }
+  .s3-header-rule {
+    flex: 1; height: 1px;
+    background: linear-gradient(to right, rgba(201,168,76,0.35), transparent);
+  }
+  .s3-header-logo {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 13px; color: rgba(245,242,236,0.25); letter-spacing: 0.05em;
+  }
+  .s3-header-logo span { color: rgba(201,168,76,0.35); }
+
+  /* Title block */
+  .s3-title-block {
+    position: absolute; top: 74px; left: 80px;
+    opacity: 0; animation: fadeUp 0.7s ease forwards 0.35s;
+  }
+  .s3-eyebrow {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px;
+    letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 6px;
+  }
+  .s3-title {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 42px; line-height: 1.05; color: var(--white);
+  }
+
+  /* Central platform label */
+  .s3-platform-core {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 3;
+    opacity: 0; animation: fadeUp 0.6s ease forwards 0.5s;
+  }
+  .s3-core-ring {
+    width: 140px; height: 140px; border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.5);
+    background: radial-gradient(ellipse at center, rgba(25,10,70,0.9) 0%, rgba(5,3,15,0.85) 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    margin: 0 auto 0;
+    box-shadow: 0 0 40px rgba(201,168,76,0.15), inset 0 0 30px rgba(25,10,70,0.5);
+  }
+  .s3-core-name {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 18px; color: var(--gold); letter-spacing: 0.05em;
+  }
+  .s3-core-sub {
+    font-family: 'Rajdhani', sans-serif; font-size: 8px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: rgba(245,242,236,0.45); margin-top: 4px;
+  }
+
+  /* Four pillars */
+  .s3-pillars {
+    position: absolute;
+    top: 50%; left: 80px; right: 80px;
+    transform: translateY(-50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    opacity: 0; animation: fadeUp 0.7s ease forwards 0.55s;
+  }
+  .s3-pillar {
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(25,10,70,0.35);
+    padding: 28px 22px 24px;
+    position: relative;
+    transition: border-color 0.3s;
+  }
+  .s3-pillar:hover {
+    border-color: rgba(201,168,76,0.5);
+    background: rgba(25,10,70,0.5);
+  }
+  .s3-pillar-num {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-size: 48px; line-height: 1;
+    color: rgba(201,168,76,0.12);
+    position: absolute; top: 14px; right: 18px;
+  }
+  .s3-pillar-tag {
+    font-family: 'Rajdhani', sans-serif; font-size: 8px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 10px; display: block;
+  }
+  .s3-pillar-name {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: 20px; line-height: 1.15; color: var(--white);
+    margin-bottom: 12px; display: block;
+  }
+  .s3-pillar-desc {
+    font-family: 'Rajdhani', sans-serif; font-weight: 400;
+    font-size: 12px; line-height: 1.55;
+    color: rgba(245,242,236,0.6); display: block;
+    margin-bottom: 16px;
+  }
+  .s3-pillar-outputs {
+    list-style: none; padding: 0; margin: 0;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding-top: 12px;
+  }
+  .s3-pillar-outputs li {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px;
+    color: rgba(245,242,236,0.5); line-height: 1.6;
+    padding-left: 10px; position: relative;
+  }
+  .s3-pillar-outputs li::before {
+    content: '›';
+    position: absolute; left: 0;
+    color: var(--gold); opacity: 0.6;
+  }
+
+  /* Bottom tagline */
+  .s3-tagline {
+    position: absolute; bottom: 52px; left: 80px; right: 80px;
+    text-align: center;
+    opacity: 0; animation: fadeUp 0.6s ease forwards 0.8s;
+  }
+  .s3-tagline p {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300;
+    font-style: italic; font-size: 16px;
+    color: rgba(245,242,236,0.5);
+    letter-spacing: 0.02em;
+  }
+  .s3-tagline p span { color: var(--gold); font-style: normal; }
+
+  /* Footer */
+  .s3-footer {
+    position: absolute; bottom: 26px; left: 80px; right: 80px;
+    display: flex; justify-content: space-between;
+    border-top: 1px solid rgba(201,168,76,0.1); padding-top: 10px;
+  }
+  .s3-footer span {
+    font-family: 'Rajdhani', sans-serif; font-size: 9px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+  }
+  .s3-footer .left { color: rgba(201,168,76,0.4); }
+  .s3-footer .right { color: var(--white-20); }
+
 </style>
 </head>
 <body>
@@ -812,7 +1005,6 @@
 
     <!-- Timeline -->
     <div class="s2-timeline">
-
       <!-- ABOVE: context per stage -->
       <div class="s2-above">
         <div class="s2-above-item"><span class="s2-above-text">Vision &amp;<br>scope defined</span></div>
@@ -835,33 +1027,40 @@
         <div class="s2-node-wrap"><div class="s2-node"></div></div>
       </div>
 
-      <!-- BELOW: stage name + what DigitAlchemy does here -->
+      <!-- BELOW: stage name + icon + descriptor -->
       <div class="s2-below">
         <div class="s2-stage-item">
+          <span class="s2-stage-icon">◇</span>
           <span class="s2-stage-name">Brief</span>
           <span class="s2-stage-desc">Scope &amp; intent<br>established</span>
         </div>
         <div class="s2-stage-item">
+          <span class="s2-stage-icon">◈</span>
           <span class="s2-stage-name">Feasibility</span>
           <span class="s2-stage-desc">Assumptions feed<br>revenue models</span>
         </div>
         <div class="s2-stage-item">
+          <span class="s2-stage-icon">⬡</span>
           <span class="s2-stage-name">Design</span>
           <span class="s2-stage-desc">Models verified,<br>scope locked</span>
         </div>
         <div class="s2-stage-item">
+          <span class="s2-stage-icon">◉</span>
           <span class="s2-stage-name">Procurement</span>
           <span class="s2-stage-desc">Package readiness<br>&amp; award tracking</span>
         </div>
         <div class="s2-stage-item">
+          <span class="s2-stage-icon">◉</span>
           <span class="s2-stage-name">Construction</span>
           <span class="s2-stage-desc">Plan vs actual,<br>delay risk signals</span>
         </div>
         <div class="s2-stage-item">
+          <span class="s2-stage-icon">◉</span>
           <span class="s2-stage-name">Leasing</span>
           <span class="s2-stage-desc">Market-calibrated<br>revenue targets</span>
         </div>
         <div class="s2-stage-item">
+          <span class="s2-stage-icon">◇</span>
           <span class="s2-stage-name">Handover</span>
           <span class="s2-stage-desc">Computed readiness,<br>not assumed</span>
         </div>
@@ -872,16 +1071,16 @@
     <!-- Insight strip -->
     <div class="s2-insight">
       <div class="s2-insight-item">
-        <div class="s2-insight-title">Upstream connection</div>
-        <div class="s2-insight-body">Feasibility assumptions feed directly into construction schedules and revenue scenarios</div>
+        <div class="s2-insight-title">Early decisions shape final numbers</div>
+        <div class="s2-insight-body">What you commit at brief flows through to cashflow — no assumption gaps, no late surprises</div>
       </div>
       <div class="s2-insight-item">
-        <div class="s2-insight-title">Platform core</div>
-        <div class="s2-insight-body">Procurement · Construction · Leasing synchronised on a single intelligence layer</div>
+        <div class="s2-insight-title">Every phase on one screen</div>
+        <div class="s2-insight-body">Delivery, procurement, and revenue intelligence — synchronised, live, in a single view</div>
       </div>
       <div class="s2-insight-item">
-        <div class="s2-insight-title">Forward visibility</div>
-        <div class="s2-insight-body">Handover readiness is computed from live delivery and market signals — not assumed</div>
+        <div class="s2-insight-title">Handover proven before it happens</div>
+        <div class="s2-insight-body">Readiness is computed from live signals — not declared at the end and hoped for</div>
       </div>
     </div>
 
@@ -892,12 +1091,109 @@
 
   </section>
 
+  <!-- ══ SLIDE 3 ══════════════════════════════ -->
+  <section class="slide" id="s3">
+
+    <div class="s3-video">
+      <video autoplay muted loop playsinline>
+        <!-- HOST THIS FILE IN YOUR REPO: assets/bg-s3.mp4 -->
+        <!-- Download any aerial construction clip and place at that path -->
+        <source src="assets/bg-s3.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="s3-overlay"></div>
+    <div class="s3-grid"></div>
+
+    <!-- Header -->
+    <div class="s3-header">
+      <span class="s3-header-label">Platform Architecture</span>
+      <div class="s3-header-rule"></div>
+      <span class="s3-header-logo">Digit<span>Alchemy®</span></span>
+    </div>
+
+    <!-- Title -->
+    <div class="s3-title-block">
+      <p class="s3-eyebrow">Four modules. One intelligence layer.</p>
+      <h2 class="s3-title">The platform at a glance.</h2>
+    </div>
+
+    <!-- Four pillars -->
+    <div class="s3-pillars">
+
+      <div class="s3-pillar">
+        <span class="s3-pillar-num">01</span>
+        <span class="s3-pillar-tag">Module One</span>
+        <span class="s3-pillar-name">Built Environment &amp; Infrastructure</span>
+        <span class="s3-pillar-desc">The delivery spine. Schedule, packages, progress, and plan-vs-actual — tracked in real time.</span>
+        <ul class="s3-pillar-outputs">
+          <li>Construction schedule intelligence</li>
+          <li>Package &amp; procurement tracking</li>
+          <li>Delay risk signals</li>
+          <li>Plan vs actual reporting</li>
+        </ul>
+      </div>
+
+      <div class="s3-pillar">
+        <span class="s3-pillar-num">02</span>
+        <span class="s3-pillar-tag">Module Two</span>
+        <span class="s3-pillar-name">AI-Governed Model Review</span>
+        <span class="s3-pillar-desc">The verification layer. Model completeness, schedule-to-asset linkage, and optional drone or point cloud validation.</span>
+        <ul class="s3-pillar-outputs">
+          <li>Model completeness scoring</li>
+          <li>Schedule-to-asset linkage</li>
+          <li>Drone &amp; point cloud integration</li>
+          <li>Regulatory compliance checks</li>
+        </ul>
+      </div>
+
+      <div class="s3-pillar">
+        <span class="s3-pillar-num">03</span>
+        <span class="s3-pillar-tag">Module Three</span>
+        <span class="s3-pillar-name">Commercial &amp; Market Intelligence</span>
+        <span class="s3-pillar-desc">The market layer. Live rent benchmarks, vacancy signals, demand indicators, and competitor pipeline.</span>
+        <ul class="s3-pillar-outputs">
+          <li>Rent &amp; yield benchmarks</li>
+          <li>Vacancy &amp; absorption signals</li>
+          <li>Competitor pipeline tracking</li>
+          <li>Demand forecasting</li>
+        </ul>
+      </div>
+
+      <div class="s3-pillar">
+        <span class="s3-pillar-num">04</span>
+        <span class="s3-pillar-tag">Module Four</span>
+        <span class="s3-pillar-name">Feasibility &amp; Revenue Intelligence</span>
+        <span class="s3-pillar-desc">The cashflow layer. Cost-to-complete, revenue-start timing, and scenario sensitivities — computed, not assumed.</span>
+        <ul class="s3-pillar-outputs">
+          <li>Cost-to-complete modelling</li>
+          <li>Revenue-start timing</li>
+          <li>Cashflow scenario analysis</li>
+          <li>Unit mix optimisation</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom tagline -->
+    <div class="s3-tagline">
+      <p>Every module shares one data layer — <span>ask it anything</span>, at any phase.</p>
+    </div>
+
+    <footer class="s3-footer">
+      <span class="left">DigitAlchemy Tech Limited &nbsp;·&nbsp; ADGM No. 35004 &nbsp;·&nbsp; Confidential</span>
+      <span class="right">03 / 12</span>
+    </footer>
+
+  </section>
+
+
 </div>
 
 <!-- Nav -->
 <div class="nav">
   <div class="nav-dot active" data-slide="0"></div>
   <div class="nav-dot" data-slide="1"></div>
+  <div class="nav-dot" data-slide="2"></div>
 </div>
 <div class="key-hint">← → navigate</div>
 
@@ -912,7 +1208,15 @@
     current = (n + slides.length) % slides.length;
     slides[current].classList.add('active');
     dots[current].classList.add('active');
+    // Ensure video plays when slide becomes visible
+    const vid = slides[current].querySelector('video');
+    if (vid) { vid.play().catch(() => {}); }
   }
+
+  // Play all videos on load (some browsers block until interaction)
+  document.addEventListener('click', () => {
+    document.querySelectorAll('video').forEach(v => v.play().catch(() => {}));
+  }, { once: true });
 
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goTo(current + 1);
