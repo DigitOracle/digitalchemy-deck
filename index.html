@@ -565,447 +565,210 @@
   }
 
   /* ════════════════════════════════════════════════════
-     SLIDE 2 — CRADLE TO GRAVE LIFECYCLE
+     SLIDE 2 — HOW WE ENGAGE
   ════════════════════════════════════════════════════ */
   #s2 { background: #05030f; }
 
-  .s2-video {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    overflow: hidden;
-  }
-  .s2-video video {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%; min-height: 100%;
-    width: auto; height: auto;
-    object-fit: cover;
-  }
-  .s2-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to bottom,
-      rgba(5,3,15,0.55) 0%, rgba(25,10,70,0.65) 50%, rgba(5,3,15,0.72) 100%);
-  }
-  .s2-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(201,168,76,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,168,76,0.025) 1px, transparent 1px);
-    background-size: 80px 80px; pointer-events: none;
-  }
-
-  /* Header */
   .s2-header {
-    position: absolute; top: 36px; left: 80px; right: 80px;
-    display: flex; align-items: center; gap: 16px;
+    position: absolute; top: 0; left: 0; right: 0; height: 52px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+    background: rgba(25,10,70,0.4); backdrop-filter: blur(4px);
+    z-index: 10;
   }
-  .s2-header-label {
-    font-family: 'Rajdhani', sans-serif; font-size: 10px;
-    letter-spacing: 0.32em; text-transform: uppercase;
-    color: var(--gold); white-space: nowrap;
-  }
-  .s2-header-rule {
-    flex: 1; height: 1px;
-    background: linear-gradient(to right, rgba(201,168,76,0.35), transparent);
+  .s2-header-eyebrow {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px;
+    letter-spacing: 0.36em; text-transform: uppercase; color: var(--gold);
   }
   .s2-header-logo {
     font-family: 'Cormorant Garamond', serif; font-weight: 300;
-    font-size: 13px; color: rgba(245,242,236,0.25); letter-spacing: 0.05em;
+    font-size: 14px; color: rgba(245,242,236,0.28); letter-spacing: 0.05em;
   }
-  .s2-header-logo span { color: rgba(201,168,76,0.35); }
+  .s2-header-logo span { color: rgba(201,168,76,0.45); }
 
   /* Title */
-  .s2-title-block { position: absolute; top: 74px; left: 80px; }
-  .s2-eyebrow {
-    font-family: 'Rajdhani', sans-serif; font-size: 10px;
-    letter-spacing: 0.36em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 6px;
+  .s2-title-block {
+    position: absolute; top: 68px; left: 80px;
+    opacity: 0; animation: fadeUp 0.7s ease forwards 0.2s; z-index: 10;
   }
   .s2-title {
     font-family: 'Cormorant Garamond', serif; font-weight: 300;
-    font-size: 36px; line-height: 1.1; color: var(--white);
+    font-size: 42px; line-height: 1.05; color: var(--white);
+    text-shadow: 0 2px 24px rgba(5,3,15,0.9);
+  }
+  .s2-subtitle {
+    font-family: 'Rajdhani', sans-serif; font-weight: 300; font-style: italic;
+    font-size: 13px; color: rgba(245,242,236,0.5);
+    margin-top: 6px; letter-spacing: 0.04em;
   }
 
-  /* ── Timeline — centred vertically ── */
-  .s2-timeline {
+  /* ── Gateway card ── */
+  .s2-gateway {
     position: absolute;
-    left: 64px; right: 64px;
-    top: 50%; transform: translateY(-46%);
+    top: 148px; left: 80px; right: 80px;
+    padding: 20px 28px;
+    background: rgba(201,168,76,0.07);
+    border: 1px solid rgba(201,168,76,0.45);
+    border-left: 3px solid var(--gold);
+    border-radius: 3px;
+    display: flex; align-items: center; gap: 32px;
+    opacity: 0; animation: fadeUp 0.65s ease forwards 0.35s;
+    z-index: 10;
+  }
+  .s2-gateway-badge {
+    font-family: 'Rajdhani', sans-serif; font-size: 9px;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: rgba(5,3,15,0.9); background: var(--gold);
+    padding: 4px 12px; border-radius: 2px; font-weight: 700;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .s2-gateway-divider {
+    width: 1px; height: 40px; flex-shrink: 0;
+    background: rgba(201,168,76,0.3);
+  }
+  .s2-gateway-main { flex: 1; }
+  .s2-gateway-title {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: 22px; color: var(--white); margin-bottom: 4px;
+  }
+  .s2-gateway-desc {
+    font-family: 'Rajdhani', sans-serif; font-weight: 300;
+    font-size: 13px; color: rgba(245,242,236,0.65); line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+  .s2-gateway-desc strong { color: var(--gold); font-weight: 500; }
+  .s2-gateway-tags {
+    display: flex; gap: 8px; flex-wrap: wrap; flex-shrink: 0;
+  }
+  .s2-gateway-tag {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(201,168,76,0.7); padding: 4px 10px;
+    border: 1px solid rgba(201,168,76,0.25); border-radius: 2px;
+    white-space: nowrap;
   }
 
-  /* ABOVE row — italic context per stage */
-  .s2-above {
-    display: flex; margin-bottom: 12px;
+  /* Gateway arrow */
+  .s2-gateway-arrow {
+    position: absolute;
+    top: 246px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    opacity: 0; animation: fadeUp 0.5s ease forwards 0.55s;
+    z-index: 10;
   }
-  .s2-above-item {
-    flex: 1; text-align: center; padding: 0 6px;
+  .s2-gateway-arrow-line {
+    width: 1px; height: 16px;
+    background: linear-gradient(to bottom, rgba(201,168,76,0.5), rgba(201,168,76,0.2));
   }
-  .s2-above-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400; font-style: italic;
-    font-size: 14px; line-height: 1.4;
-    color: rgba(245,242,236,0.82);
-  }
-
-  /* Spine + nodes row */
-  .s2-spine-row {
-    display: flex; align-items: center;
-    position: relative; height: 16px;
-  }
-  .s2-spine-row::before {
-    content: '';
-    position: absolute; top: 50%; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(to right,
-      rgba(201,168,76,0.3), var(--gold) 15%, var(--gold) 85%, rgba(201,168,76,0.3));
-    transform: translateY(-50%);
-  }
-  .s2-node-wrap {
-    flex: 1; display: flex; justify-content: center; position: relative; z-index: 2;
-  }
-  .s2-node {
-    width: 13px; height: 13px; border-radius: 50%;
-    background: var(--gold); border: 2px solid rgba(245,242,236,0.4);
-    box-shadow: 0 0 12px rgba(201,168,76,0.6);
+  .s2-gateway-arrow-head {
+    width: 0; height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid rgba(201,168,76,0.45);
   }
 
-  /* BELOW row — stage name + description */
-  .s2-below { display: flex; margin-top: 12px; }
-  .s2-stage-item {
-    flex: 1; text-align: center; padding: 0 4px;
+  /* ── Three engagement cards ── */
+  .s2-cards {
+    position: absolute;
+    top: 290px; left: 80px; right: 80px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    z-index: 10;
   }
-  .s2-stage-name {
-    font-family: 'Rajdhani', sans-serif; font-weight: 600;
-    font-size: 11px; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--gold);
-    display: block; margin-bottom: 4px;
-  }
-  .s2-stage-desc {
-    font-family: 'Rajdhani', sans-serif; font-weight: 400;
-    font-size: 11px; letter-spacing: 0.06em;
-    color: rgba(245,242,236,0.65); line-height: 1.4;
-    display: block;
-  }
-
-  
-
-  
-
-  
-
-  
-
-  /* Stage icon */
-  .s2-stage-icon {
-    display: block; font-size: 13px; margin-bottom: 5px;
-    color: rgba(201,168,76,0.5);
-  }
-
-  
-
-
-    position: absolute; bottom: 52px; left: 64px; right: 64px;
-    display: flex; gap: 3px;
-  }
-  .s2-insight-item {
-    flex: 1; padding: 12px 18px;
-    border: 1px solid rgba(201,168,76,0.15);
+  .s2-card {
     background: rgba(25,10,70,0.45);
+    border: 1px solid rgba(245,242,236,0.07);
+    border-top: 2px solid rgba(201,168,76,0.3);
+    border-radius: 3px;
+    padding: 20px 20px 16px;
+    display: flex; flex-direction: column;
+    opacity: 0;
+    transition: background 0.3s, border-top-color 0.3s;
   }
-  .s2-insight-title {
+  .s2-card:hover { background: rgba(25,10,70,0.62); border-top-color: var(--gold); }
+  .s2-card:nth-child(1) { animation: fadeUp 0.55s ease forwards 0.65s; }
+  .s2-card:nth-child(2) { animation: fadeUp 0.55s ease forwards 0.80s; }
+  .s2-card:nth-child(3) { animation: fadeUp 0.55s ease forwards 0.95s; }
+
+  .s2-card-num {
+    font-family: 'Rajdhani', sans-serif; font-size: 9px;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 8px; opacity: 0.75;
+  }
+  .s2-card-title {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: 20px; color: var(--white); margin-bottom: 10px; line-height: 1.2;
+  }
+  .s2-card-body {
+    font-family: 'Rajdhani', sans-serif; font-weight: 300;
+    font-size: 13px; line-height: 1.6; color: rgba(245,242,236,0.62);
+    letter-spacing: 0.02em; flex: 1; margin-bottom: 12px;
+  }
+  .s2-card-scope {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px;
+    letter-spacing: 0.08em; color: rgba(201,168,76,0.55);
+    font-style: italic; border-top: 1px solid rgba(245,242,236,0.06);
+    padding-top: 10px; margin-top: auto;
+  }
+
+  /* ── Journey flow ── */
+  .s2-journey {
+    position: absolute;
+    bottom: 58px; left: 80px; right: 80px;
+    display: flex; align-items: center;
+    opacity: 0; animation: fadeUp 0.6s ease forwards 1.1s;
+    z-index: 10;
+  }
+  .s2-journey-step {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 4px; flex: 1; text-align: center;
+  }
+  .s2-journey-num {
     font-family: 'Rajdhani', sans-serif; font-size: 9px;
     letter-spacing: 0.28em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 4px;
+    color: var(--gold); font-weight: 600; opacity: 0.65;
   }
-  .s2-insight-body {
-    font-family: 'Cormorant Garamond', serif; font-weight: 300;
-    font-style: italic; font-size: 13px;
-    color: var(--white-55); line-height: 1.4;
+  .s2-journey-label {
+    font-family: 'Rajdhani', sans-serif; font-size: 12px;
+    font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--white);
   }
+  .s2-journey-sub {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px; font-weight: 300;
+    color: rgba(245,242,236,0.4); letter-spacing: 0.04em;
+  }
+  .s2-journey-arrow {
+    font-family: 'Rajdhani', sans-serif; font-size: 16px;
+    color: rgba(201,168,76,0.35); flex-shrink: 0; padding: 0 4px;
+    margin-bottom: 14px;
+  }
+  .s2-journey-tagline {
+    position: absolute; bottom: -18px; left: 0; right: 0;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 13px; color: rgba(245,242,236,0.3); letter-spacing: 0.02em;
+  }
+  .s2-journey-tagline span { color: rgba(201,168,76,0.5); }
 
   /* Footer */
   .s2-footer {
-    position: absolute; bottom: 26px; left: 80px; right: 80px;
-    display: flex; justify-content: space-between;
-    border-top: 1px solid rgba(201,168,76,0.1); padding-top: 10px;
+    position: absolute; bottom: 0; left: 0; right: 0; height: 38px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; border-top: 1px solid rgba(245,242,236,0.05);
+    z-index: 10;
   }
-  .s2-footer span {
-    font-family: 'Rajdhani', sans-serif; font-size: 9px;
+  .s2-footer-left {
+    font-family: 'Rajdhani', sans-serif; font-size: 10px;
     letter-spacing: 0.22em; text-transform: uppercase;
-  }
-  .s2-footer .left { color: rgba(201,168,76,0.4); }
-  .s2-footer .right { color: var(--white-20); }
-
-  .s2-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(201,168,76,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,168,76,0.025) 1px, transparent 1px);
-    background-size: 80px 80px;
-    pointer-events: none;
-  }
-
-  /* ── Slide header ── */
-  .s2-header {
-    position: absolute;
-    top: 52px; left: 80px; right: 80px;
-    display: flex;
-    align-items: baseline;
-    gap: 20px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease forwards 0.2s;
+    color: rgba(245,242,236,0.2);
   }
   .s2-slide-num {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-  .s2-header-rule {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, rgba(201,168,76,0.4), transparent);
-  }
-  .s2-logo-small {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: 14px;
-    color: rgba(245,242,236,0.3);
-    letter-spacing: 0.05em;
-  }
-  .s2-logo-small span { color: rgba(201,168,76,0.4); }
-
-  /* ── Section title ── */
-  .s2-title-block {
-    position: absolute;
-    top: 100px; left: 80px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease forwards 0.35s;
-  }
-  .s2-eyebrow {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 10px;
-    letter-spacing: 0.36em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-  .s2-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: 42px;
-    line-height: 1.05;
-    color: var(--white);
-    letter-spacing: -0.01em;
+    font-family: 'Cormorant Garamond', serif; font-size: 13px;
+    color: rgba(201,168,76,0.4); letter-spacing: 0.1em;
   }
 
-  /* ── Timeline track ── */
-  .s2-timeline {
-    position: absolute;
-    top: 50%;
-    left: 80px; right: 80px;
-    transform: translateY(-50%);
-    margin-top: 20px;
-  }
-
-  /* Horizontal spine */
-  .s2-spine {
-    position: relative;
-    height: 2px;
-    background: rgba(201,168,76,0.15);
-    margin: 0 0 0 0;
-  }
-  /* Active zone highlight on spine —
-     7 stages equally spaced, active = stages 4,5,6
-     each stage = 1/7 ≈ 14.28%. Stage 4 starts at 3/7 ≈ 42.8%, ends after stage 6 at 6/7 ≈ 85.7% */
-  .s2-spine-active {
-    position: absolute;
-    top: -1px; bottom: -1px;
-    background: linear-gradient(to right, var(--gold), rgba(201,168,76,0.55));
-    border-radius: 2px;
-    left: 42.8%; width: 42.9%;
-  }
-
-  /* Stages row */
-  .s2-stages {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    margin-top: 0;
-  }
-
-  .s2-stage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    position: relative;
-    opacity: 0;
-  }
-
-  /* Stagger each stage */
-  .s2-stage:nth-child(1) { animation: fadeUp 0.5s ease forwards 0.5s; }
-  .s2-stage:nth-child(2) { animation: fadeUp 0.5s ease forwards 0.65s; }
-  .s2-stage:nth-child(3) { animation: fadeUp 0.5s ease forwards 0.80s; }
-  .s2-stage:nth-child(4) { animation: fadeUp 0.5s ease forwards 0.95s; }
-  .s2-stage:nth-child(5) { animation: fadeUp 0.5s ease forwards 1.10s; }
-  .s2-stage:nth-child(6) { animation: fadeUp 0.5s ease forwards 1.25s; }
-  .s2-stage:nth-child(7) { animation: fadeUp 0.5s ease forwards 1.40s; }
-
-  /* Node — default dim */
-  .s2-node {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(201,168,76,0.25);
-    background: rgba(5,3,15,0.9);
-    margin-bottom: 14px;
-    margin-top: -6px;
-    position: relative;
-    z-index: 2;
-  }
-
-  /* Node — active gold */
-  .s2-stage.active-stage .s2-node {
-    background: var(--gold);
-    border-color: var(--gold);
-    box-shadow: 0 0 14px rgba(201,168,76,0.6);
-    width: 14px; height: 14px;
-    margin-top: -7px;
-  }
-
-  /* Stage label — default dim */
-  .s2-stage-label {
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    text-align: center;
-    color: rgba(245,242,236,0.28);
-    line-height: 1.3;
-    white-space: nowrap;
-  }
-
-  /* Stage label — active bright */
-  .s2-stage.active-stage .s2-stage-label {
-    color: var(--white);
-    font-weight: 600;
-    font-size: 13px;
-  }
-
-  /* Sub-label — default very dim */
-  .s2-stage-sub {
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 300;
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-align: center;
-    color: rgba(245,242,236,0.15);
-    margin-top: 5px;
-    line-height: 1.4;
-    white-space: nowrap;
-  }
-
-  /* Sub-label — active gold tint */
-  .s2-stage.active-stage .s2-stage-sub {
-    color: rgba(201,168,76,0.7);
-  }
-
-  /* Arrow connectors */
-  .s2-arrow {
-    position: absolute;
-    top: -5px;
-    right: -1px;
-    width: 0; height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 7px solid rgba(201,168,76,0.15);
-    z-index: 3;
-  }
-
-  /* ── Platform band label ── */
-  .s2-band {
-    position: absolute;
-    bottom: -56px;
-    left: 42%; width: 42%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease forwards 1.6s;
-  }
-  .s2-band-line {
-    width: 100%; height: 1px;
-    background: linear-gradient(to right, transparent, rgba(201,168,76,0.35), transparent);
-  }
-  .s2-band-label {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 9.5px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--gold);
-    opacity: 0.7;
-    text-align: center;
-  }
-
-  /* ── Bottom insight strip ── */
-  .s2-insight {
-    position: absolute;
-    bottom: 68px; left: 80px; right: 80px;
-    display: flex;
-    gap: 2px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease forwards 1.8s;
-  }
-  .s2-insight-item {
-    flex: 1;
-    padding: 14px 20px;
-    border: 1px solid rgba(245,242,236,0.05);
-    background: rgba(25,10,70,0.3);
-  }
-  .s2-insight-item.highlight {
-    border-color: rgba(201,168,76,0.2);
-    background: rgba(25,10,70,0.5);
-  }
-  .s2-insight-title {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 9px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 4px;
-  }
-  .s2-insight-body {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-style: italic;
-    font-size: 13px;
-    color: var(--white-55);
-    line-height: 1.4;
-  }
-
-  /* ── Footer ── */
-  .s2-footer {
-    position: absolute;
-    bottom: 32px; left: 80px; right: 80px;
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid rgba(201,168,76,0.1);
-    padding-top: 12px;
-    opacity: 0;
-    animation: fadeIn 0.8s ease forwards 2.0s;
-  }
-  .s2-footer span {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-  }
-  .s2-footer .left { color: rgba(201,168,76,0.4); }
-  .s2-footer .right { color: var(--white-20); }
 
   /* ════════════════════════════════════════════════════
      SLIDE 3 — PLATFORM AT A GLANCE
@@ -1608,111 +1371,97 @@
   <!-- ══ SLIDE 2 ══════════════════════════════ -->
   <section class="slide" id="s2">
 
-    <div class="s2-video">
-      <video autoplay muted loop playsinline>
-        <source src="assets/bg-s2.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="s2-overlay"></div>
-    <div class="s2-grid"></div>
+    <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      <source src="assets/bg-s2.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(5,3,15,0.94) 0%,rgba(5,3,15,0.82) 55%,rgba(5,3,15,0.92) 100%);z-index:1;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,transparent 60%,rgba(5,3,15,0.5) 100%);z-index:2;"></div>
 
     <!-- Header -->
     <div class="s2-header">
-      <span class="s2-header-label">Development Lifecycle</span>
-      <div class="s2-header-rule"></div>
-      <span class="s2-header-logo">Digit<span>Alchemy®</span></span>
+      <span class="s2-header-eyebrow">Engagement Model</span>
+      <span class="s2-header-logo">Digit<span>Alchemy</span>&#174;</span>
     </div>
 
     <!-- Title -->
     <div class="s2-title-block">
-      <p class="s2-eyebrow">From first brief to operational handover</p>
-      <h2 class="s2-title">The full development journey,<br>connected end to end.</h2>
+      <div class="s2-title">How we engage.</div>
+      <div class="s2-subtitle">Every engagement is scoped to your asset, your phase, and your ambition.</div>
     </div>
 
-    <!-- Timeline -->
-    <div class="s2-timeline">
-      <!-- ABOVE: context per stage -->
-      <div class="s2-above">
-        <div class="s2-above-item"><span class="s2-above-text">Vision &amp;<br>scope defined</span></div>
-        <div class="s2-above-item"><span class="s2-above-text">Viability &amp;<br>scenario testing</span></div>
-        <div class="s2-above-item"><span class="s2-above-text">Models &amp;<br>regulatory approvals</span></div>
-        <div class="s2-above-item"><span class="s2-above-text">Packages awarded,<br>site mobilised</span></div>
-        <div class="s2-above-item"><span class="s2-above-text">Progress tracked,<br>risk managed</span></div>
-        <div class="s2-above-item"><span class="s2-above-text">Revenue targeted,<br>market calibrated</span></div>
-        <div class="s2-above-item"><span class="s2-above-text">Operations<br>readiness confirmed</span></div>
+    <!-- Gateway card -->
+    <div class="s2-gateway">
+      <span class="s2-gateway-badge">Always First</span>
+      <div class="s2-gateway-divider"></div>
+      <div class="s2-gateway-main">
+        <div class="s2-gateway-title">Diagnostic Audit</div>
+        <div class="s2-gateway-desc">An <strong>ISO 30105-9</strong> structured assessment of your current digital maturity — technology stack, data flows, standards alignment, and governance gaps. Delivers a <strong>RIBA-aligned transformation roadmap</strong> with a clear pathway into full platform deployment. Every engagement begins here.</div>
+      </div>
+      <div class="s2-gateway-tags">
+        <span class="s2-gateway-tag">ISO 30105-9</span>
+        <span class="s2-gateway-tag">Digital Maturity</span>
+        <span class="s2-gateway-tag">RIBA Roadmap</span>
+        <span class="s2-gateway-tag">Tech Stack Review</span>
+      </div>
+    </div>
+
+    <!-- Arrow from gateway to cards -->
+    <div class="s2-gateway-arrow">
+      <div class="s2-gateway-arrow-line"></div>
+      <div class="s2-gateway-arrow-head"></div>
+    </div>
+
+    <!-- Three engagement cards -->
+    <div class="s2-cards">
+
+      <div class="s2-card">
+        <div class="s2-card-num">Stream 01</div>
+        <div class="s2-card-title">Project Engagement</div>
+        <div class="s2-card-body">Fixed-scope, SOW-governed delivery tied to specific project phases or workstreams. Ideal for organisations seeking targeted intelligence on a live development.</div>
+        <div class="s2-card-scope">Scope and investment determined by phase, asset type, and complexity</div>
       </div>
 
-      <!-- Spine + nodes -->
-      <div class="s2-spine-row">
-        <div class="s2-node-wrap"><div class="s2-node"></div></div>
-        <div class="s2-node-wrap"><div class="s2-node"></div></div>
-        <div class="s2-node-wrap"><div class="s2-node"></div></div>
-        <div class="s2-node-wrap"><div class="s2-node"></div></div>
-        <div class="s2-node-wrap"><div class="s2-node"></div></div>
-        <div class="s2-node-wrap"><div class="s2-node"></div></div>
-        <div class="s2-node-wrap"><div class="s2-node"></div></div>
+      <div class="s2-card">
+        <div class="s2-card-num">Stream 02</div>
+        <div class="s2-card-title">Ongoing Advisory</div>
+        <div class="s2-card-body">A retainer relationship providing continuous regulatory intelligence, standards monitoring, and access to DigitOracle&#174; across your portfolio — regardless of project stage.</div>
+        <div class="s2-card-scope">Monthly engagement — calibrated to portfolio size and query volume</div>
       </div>
 
-      <!-- BELOW: stage name + icon + descriptor -->
-      <div class="s2-below">
-        <div class="s2-stage-item">
-          <span class="s2-stage-icon">◇</span>
-          <span class="s2-stage-name">Brief</span>
-          <span class="s2-stage-desc">Scope &amp; intent<br>established</span>
-        </div>
-        <div class="s2-stage-item">
-          <span class="s2-stage-icon">◈</span>
-          <span class="s2-stage-name">Feasibility</span>
-          <span class="s2-stage-desc">Assumptions feed<br>revenue models</span>
-        </div>
-        <div class="s2-stage-item">
-          <span class="s2-stage-icon">⬡</span>
-          <span class="s2-stage-name">Design</span>
-          <span class="s2-stage-desc">Models verified,<br>scope locked</span>
-        </div>
-        <div class="s2-stage-item">
-          <span class="s2-stage-icon">◉</span>
-          <span class="s2-stage-name">Procurement</span>
-          <span class="s2-stage-desc">Package readiness<br>&amp; award tracking</span>
-        </div>
-        <div class="s2-stage-item">
-          <span class="s2-stage-icon">◉</span>
-          <span class="s2-stage-name">Construction</span>
-          <span class="s2-stage-desc">Plan vs actual,<br>delay risk signals</span>
-        </div>
-        <div class="s2-stage-item">
-          <span class="s2-stage-icon">◉</span>
-          <span class="s2-stage-name">Leasing</span>
-          <span class="s2-stage-desc">Market-calibrated<br>revenue targets</span>
-        </div>
-        <div class="s2-stage-item">
-          <span class="s2-stage-icon">◇</span>
-          <span class="s2-stage-name">Handover</span>
-          <span class="s2-stage-desc">Computed readiness,<br>not assumed</span>
-        </div>
+      <div class="s2-card">
+        <div class="s2-card-num">Stream 03</div>
+        <div class="s2-card-title">Platform License</div>
+        <div class="s2-card-body">Full access to the DigitAlchemy&#174; platform. Scaled by asset complexity — Standard, Complex, or Sovereign. The terminal destination for organisations ready to embed intelligence into every decision.</div>
+        <div class="s2-card-scope">Annual license — scaled by asset complexity tier, not per seat</div>
       </div>
 
     </div>
 
-    <!-- Insight strip -->
-    <div class="s2-insight">
-      <div class="s2-insight-item">
-        <div class="s2-insight-title">Early decisions shape final numbers</div>
-        <div class="s2-insight-body">What you commit at brief flows through to cashflow — no assumption gaps, no late surprises</div>
+    <!-- Journey flow -->
+    <div class="s2-journey">
+      <div class="s2-journey-step">
+        <div class="s2-journey-num">Step 01</div>
+        <div class="s2-journey-label">Diagnostic</div>
+        <div class="s2-journey-sub">Understand where you are</div>
       </div>
-      <div class="s2-insight-item">
-        <div class="s2-insight-title">Every phase on one screen</div>
-        <div class="s2-insight-body">Delivery, procurement, and revenue intelligence — synchronised, live, in a single view</div>
+      <div class="s2-journey-arrow">&#8594;</div>
+      <div class="s2-journey-step">
+        <div class="s2-journey-num">Step 02</div>
+        <div class="s2-journey-label">Project or Advisory</div>
+        <div class="s2-journey-sub">Prove value, build corpus</div>
       </div>
-      <div class="s2-insight-item">
-        <div class="s2-insight-title">Handover proven before it happens</div>
-        <div class="s2-insight-body">Readiness is computed from live signals — not declared at the end and hoped for</div>
+      <div class="s2-journey-arrow">&#8594;</div>
+      <div class="s2-journey-step">
+        <div class="s2-journey-num">Step 03</div>
+        <div class="s2-journey-label">Platform License</div>
+        <div class="s2-journey-sub">Embed intelligence organisation-wide</div>
       </div>
+      <div class="s2-journey-tagline">Each step de-risks and accelerates the <span>next</span></div>
     </div>
 
     <footer class="s2-footer">
-      <span class="left">DigitAlchemy Tech Limited &nbsp;·&nbsp; ADGM No. 35004 &nbsp;·&nbsp; Confidential</span>
-      <span class="right">02 / 12</span>
+      <span class="s2-footer-left">DigitAlchemy&#174; Tech Limited &nbsp;&#183;&nbsp; ADGM No. 35004 &nbsp;&#183;&nbsp; Abu Dhabi, UAE</span>
+      <span class="s2-slide-num">02 / 12</span>
     </footer>
 
   </section>
