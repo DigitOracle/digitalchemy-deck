@@ -1175,6 +1175,46 @@
   .s3-footer .left { color: rgba(201,168,76,0.4); }
   .s3-footer .right { color: var(--white-20); }
 
+
+  /* ════════════════════════════════════════════════════
+     GLOBAL LEGIBILITY BOOST — video background override
+  ════════════════════════════════════════════════════ */
+
+  /* Heavier overlays on all video slides */
+  #s2 .s2-grid, #s3 .s3-bg-overlay { opacity: 1; }
+
+  /* S2 — stage labels brighter */
+  .s2-stage-label { color: rgba(245,242,236,0.65) !important; font-weight: 500 !important; font-size: 13px !important; }
+  .s2-stage.active-stage .s2-stage-label { color: var(--white) !important; font-weight: 600 !important; font-size: 14px !important; }
+  .s2-stage-sub { color: rgba(245,242,236,0.45) !important; font-size: 11px !important; }
+  .s2-stage.active-stage .s2-stage-sub { color: rgba(201,168,76,0.85) !important; font-size: 11px !important; }
+  .s2-title { font-size: 46px !important; text-shadow: 0 2px 20px rgba(5,3,15,0.8); }
+  .s2-eyebrow { font-size: 11px !important; }
+  .s2-insight-title { font-size: 10px !important; font-weight: 600 !important; }
+  .s2-insight-body { font-size: 15px !important; color: var(--white) !important; }
+  .s2-context-text { font-size: 12px !important; color: rgba(245,242,236,0.75) !important; }
+
+  /* S3 — module cards bolder */
+  .s3-module-num { font-size: 11px !important; font-weight: 600 !important; }
+  .s3-module-name { font-size: 18px !important; font-weight: 600 !important; }
+  .s3-module-layer { font-size: 11px !important; color: rgba(201,168,76,0.85) !important; }
+  .s3-module-item { font-size: 12px !important; color: rgba(245,242,236,0.75) !important; }
+  .s3-tagline p { font-size: 16px !important; }
+  .s3-title { font-size: 46px !important; text-shadow: 0 2px 20px rgba(5,3,15,0.8); }
+  .s3-subtitle { font-size: 14px !important; font-weight: 500 !important; color: rgba(245,242,236,0.75) !important; }
+  .s3-eyebrow { font-size: 11px !important; font-weight: 600 !important; }
+
+  /* S4 — data flow bolder */
+  .s4-card-label { font-size: 13px !important; font-weight: 600 !important; letter-spacing: 0.15em !important; }
+  .s4-card-desc { font-size: 12px !important; color: rgba(245,242,236,0.7) !important; font-weight: 400 !important; }
+  .s4-title { font-size: 44px !important; text-shadow: 0 2px 20px rgba(5,3,15,0.9); }
+  .s4-subtitle { font-size: 14px !important; font-weight: 500 !important; color: rgba(245,242,236,0.7) !important; }
+  .s4-engine-wordmark { font-size: 32px !important; }
+  .s4-engine-tag { font-size: 11px !important; font-weight: 500 !important; }
+  .s4-engine-module { font-size: 11px !important; color: rgba(245,242,236,0.8) !important; font-weight: 500 !important; }
+  .s4-col-label { font-size: 10px !important; font-weight: 600 !important; color: rgba(245,242,236,0.5) !important; letter-spacing: 0.28em !important; }
+  .s4-col-outputs .s4-card-label { font-size: 13px !important; }
+
 </style>
 </head>
 <body>
@@ -1452,7 +1492,7 @@
     </video>
 
     <!-- Overlays -->
-    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(5,3,15,0.92) 0%,rgba(5,3,15,0.78) 50%,rgba(5,3,15,0.88) 100%);z-index:1;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(5,3,15,0.95) 0%,rgba(5,3,15,0.85) 50%,rgba(5,3,15,0.92) 100%);z-index:1;"></div>
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,transparent 60%,rgba(5,3,15,0.55) 100%);z-index:2;"></div>
 
     <!-- Header -->
